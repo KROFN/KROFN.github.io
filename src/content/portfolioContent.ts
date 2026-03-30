@@ -82,9 +82,9 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         name: ["IMGIFTED", "FEST"],
         category: "Платформа мероприятия",
         summary:
-          "Сайт фестиваля одарённых детей с программой, регистрационными сценариями и структурой для участников и родителей.",
-        tech: "React · TypeScript · Motion",
-        note: "Event storytelling and clarity",
+          "Сайт фестиваля одарённых детей с визуальным расписанием конкурсных дней, категориями выступлений, возрастными группами и адаптивной структурой для просмотра на компьютере и мобильных устройствах.",
+        tech: "HTML · CSS · Responsive",
+        note: "Schedule layout and editorial poster-style presentation",
       },
       p3: {
         name: ["FINCROSS"],
@@ -255,9 +255,9 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         name: ["IMGIFTED", "FEST"],
         category: "Event platform",
         summary:
-          "A festival website built for gifted children, combining program flow, registration moments and participant-facing clarity.",
-        tech: "React · TypeScript · Motion",
-        note: "Event storytelling and clarity",
+          "A festival website for gifted children featuring a visual schedule for competition days, performance categories, age groups, and an adaptive structure for desktop and mobile viewing.",
+        tech: "HTML · CSS · Responsive",
+        note: "Schedule layout and editorial poster-style presentation",
       },
       p3: {
         name: ["FINCROSS"],
