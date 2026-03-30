@@ -110,10 +110,13 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
       terminalCommand: "cat capabilities.manifest",
       terminalHint: "Current working focus: design-aware engineering",
       marquee: [
+        "HTML",
+        "CSS",
         "PYTHON",
         "REACT",
         "TYPESCRIPT",
         "GSAP",
+        "RICH",
         "SQLITE",
         "LINUX",
         "DOCKER",
@@ -130,6 +133,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "Python",
               focus: "Automation / tooling / backend thinking",
+            },
+            {
+              name: "Rich + InquirerPy",
+              focus: "Interactive CLI / TUI workflows",
             },
             {
               name: "SQLite",
@@ -152,6 +159,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "React",
               focus: "Component systems / rapid delivery",
+            },
+            {
+              name: "HTML + CSS",
+              focus: "Responsive layouts / editorial presentation",
             },
             {
               name: "GSAP",
@@ -283,10 +294,13 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
       terminalCommand: "cat capabilities.manifest",
       terminalHint: "Current working focus: design-aware engineering",
       marquee: [
+        "HTML",
+        "CSS",
         "PYTHON",
         "REACT",
         "TYPESCRIPT",
         "GSAP",
+        "RICH",
         "SQLITE",
         "LINUX",
         "DOCKER",
@@ -303,6 +317,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "Python",
               focus: "Automation / tooling / backend thinking",
+            },
+            {
+              name: "Rich + InquirerPy",
+              focus: "Interactive CLI / TUI workflows",
             },
             {
               name: "SQLite",
@@ -325,6 +343,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "React",
               focus: "Component systems / rapid delivery",
+            },
+            {
+              name: "HTML + CSS",
+              focus: "Responsive layouts / editorial presentation",
             },
             {
               name: "GSAP",
