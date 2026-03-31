@@ -504,7 +504,9 @@ img {
   letter-spacing: -0.06em;
   text-transform: uppercase;
   color: var(--text);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-wrap: balance;
 }
 
 .project-meta {

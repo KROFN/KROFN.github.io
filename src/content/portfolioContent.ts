@@ -2,16 +2,22 @@ import type { Locale, PortfolioCopy, ProjectItem } from "../types/portfolio";
 
 export const projects: ProjectItem[] = [
   {
-    id: "p0",
-    image: "/img/smart-placeholder.jpg",
-    demoUrl: "https://smart-otdelka.vercel.app/",
-    repoUrl: "https://github.com/KROFN/smart-otdelka",
+    id: "p5",
+    image: "/img/blog-krofn.jpg",
+    demoUrl: "https://blogkrofnonline.vercel.app/",
+    repoUrl: "https://github.com/KROFN/blogkrofnonline",
   },
   {
     id: "p1",
     image: "/img/p1.jpg",
     demoUrl: "https://karataeva-site.vercel.app/",
     repoUrl: "https://github.com/KROFN/karataeva-site",
+  },
+  {
+    id: "p0",
+    image: "/img/smart-placeholder.jpg",
+    demoUrl: "https://smart-otdelka.vercel.app/",
+    repoUrl: "https://github.com/KROFN/smart-otdelka",
   },
   {
     id: "p3",
@@ -62,16 +68,24 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
     projectIntro:
       "Выбранные запуски, в которых сочетаются визуальная подача, качество взаимодействия и реальная дисциплина shipping.",
     projects: {
+      p5: {
+        name: ["BLOG.KROFN"],
+        category: "Авторский блог-портфолио",
+        summary:
+          "Редакционный fullstack-сайт с публичным журналом и закрытой админкой: публикация заметок через TipTap-редактор, SSR/SEO-страницы постов, загрузка обложек и двуязычный интерфейс.",
+        tech: "Next.js · TypeScript · Tailwind · Supabase",
+        note: "Editorial publishing with private admin flows",
+      },
       p0: {
         name: ["СМАРТ-ОТДЕЛКА"],
         category: "Лендинг / Ремонт квартир",
         summary:
           "Портфолио-лендинг для вымышленной компании по ремонту квартир: аккуратный визуальный стиль, калькулятор итоговой цены и быстрый переход в Telegram для заявки.",
-        tech: "React | TypeScript | Vite",
+        tech: "React · TypeScript · Vite",
         note: "Калькулятор и Telegram-конверсия",
       },
       p1: {
-        name: ["ТЕПЛЫЕ", "КАДРЫ"],
+        name: ["ТЕПЛЫЕ КАДРЫ"],
         category: "Портфолио-лендинг",
         summary:
           "Персональный сайт с художественной подачей, галереей работ и лёгкой editorial-структурой для презентации специалиста.",
@@ -79,7 +93,7 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Identity-driven web experience",
       },
       p2: {
-        name: ["IMGIFTED", "FEST"],
+        name: ["IMGIFTED FEST"],
         category: "Платформа мероприятия",
         summary:
           "Сайт фестиваля одарённых детей с визуальным расписанием конкурсных дней, категориями выступлений, возрастными группами и адаптивной структурой для просмотра на компьютере и мобильных устройствах.",
@@ -112,12 +126,15 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
       marquee: [
         "HTML",
         "CSS",
+        "NEXT.JS",
         "PYTHON",
         "REACT",
+        "TAILWIND",
         "TYPESCRIPT",
         "GSAP",
         "RICH",
         "SQLITE",
+        "SUPABASE",
         "LINUX",
         "DOCKER",
         "AUTOMATION",
@@ -147,6 +164,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
               focus: "Interface safety / app architecture",
             },
             {
+              name: "Next.js",
+              focus: "SSR routing / SEO-first delivery",
+            },
+            {
               name: "Kotlin + Java",
               focus: "Expanding systems vocabulary",
             },
@@ -163,6 +184,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "HTML + CSS",
               focus: "Responsive layouts / editorial presentation",
+            },
+            {
+              name: "Tailwind CSS",
+              focus: "Fast UI composition / design consistency",
             },
             {
               name: "GSAP",
@@ -185,6 +210,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "MongoDB",
               focus: "Content and auth-ready data flows",
+            },
+            {
+              name: "Supabase",
+              focus: "Auth / storage / database-backed content systems",
             },
           ],
         },
@@ -246,16 +275,24 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
     projectIntro:
       "Selected launches that balance visual presence, interaction quality and practical shipping.",
     projects: {
+      p5: {
+        name: ["BLOG.KROFN"],
+        category: "Author blog portfolio",
+        summary:
+          "An editorial full-stack site with a public journal and a private admin area: publishing notes through a TipTap editor, SSR/SEO post pages, cover uploads, and a bilingual interface.",
+        tech: "Next.js · TypeScript · Tailwind · Supabase",
+        note: "Editorial publishing with private admin flows",
+      },
       p0: {
         name: ["SMART-OTDELKA"],
         category: "Landing / Apartment Renovation",
         summary:
           "A portfolio landing for a fictional apartment renovation company, featuring a final-price calculator, polished UI direction and direct Telegram lead routing.",
-        tech: "React | TypeScript | Vite",
+        tech: "React · TypeScript · Vite",
         note: "Calculator-driven conversion concept",
       },
       p1: {
-        name: ["WARM", "FRAMES"],
+        name: ["WARM FRAMES"],
         category: "Portfolio landing",
         summary:
           "A personal website with an editorial feel, project gallery and clear storytelling for a specialist-led brand presence.",
@@ -263,7 +300,7 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Identity-driven web experience",
       },
       p2: {
-        name: ["IMGIFTED", "FEST"],
+        name: ["IMGIFTED FEST"],
         category: "Event platform",
         summary:
           "A festival website for gifted children featuring a visual schedule for competition days, performance categories, age groups, and an adaptive structure for desktop and mobile viewing.",
@@ -296,12 +333,15 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
       marquee: [
         "HTML",
         "CSS",
+        "NEXT.JS",
         "PYTHON",
         "REACT",
+        "TAILWIND",
         "TYPESCRIPT",
         "GSAP",
         "RICH",
         "SQLITE",
+        "SUPABASE",
         "LINUX",
         "DOCKER",
         "AUTOMATION",
@@ -331,6 +371,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
               focus: "Interface safety / app architecture",
             },
             {
+              name: "Next.js",
+              focus: "SSR routing / SEO-first delivery",
+            },
+            {
               name: "Kotlin + Java",
               focus: "Expanding systems vocabulary",
             },
@@ -347,6 +391,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "HTML + CSS",
               focus: "Responsive layouts / editorial presentation",
+            },
+            {
+              name: "Tailwind CSS",
+              focus: "Fast UI composition / design consistency",
             },
             {
               name: "GSAP",
@@ -369,6 +417,10 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
             {
               name: "MongoDB",
               focus: "Content and auth-ready data flows",
+            },
+            {
+              name: "Supabase",
+              focus: "Auth / storage / database-backed content systems",
             },
           ],
         },
