@@ -11,10 +11,22 @@
       content="Premium creative engineer portfolio for Sergey Kraskovsky."
     />
     <title>Sergey Kraskovsky | Creative Engineer</title>
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("sergey-portfolio-lang");
+          if (!lang) {
+            var nav = navigator.language || navigator.userLanguage;
+            lang = nav && nav.toLowerCase().startsWith("en") ? "en" : "ru";
+          }
+          document.documentElement.lang = lang === "en" ? "en" : "ru";
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&family=Unbounded:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>

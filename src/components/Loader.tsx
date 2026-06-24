@@ -17,8 +17,19 @@ export default function Loader({ label, lead, trail, onDone }: LoaderProps) {
   useEffect(() => {
     let rafId = 0;
     let timeoutId = 0;
+    let failsafeId = 0;
+    let isDone = false;
     const duration = reducedMotion ? 700 : 1800;
     const start = performance.now();
+
+    const finish = () => {
+      if (isDone) {
+        return;
+      }
+
+      isDone = true;
+      onDone();
+    };
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
@@ -35,16 +46,18 @@ export default function Loader({ label, lead, trail, onDone }: LoaderProps) {
           yPercent: -100,
           duration: reducedMotion ? 0.4 : 0.95,
           ease: "power4.inOut",
-          onComplete: onDone,
+          onComplete: finish,
         });
       }, reducedMotion ? 60 : 200);
     };
 
     rafId = window.requestAnimationFrame(tick);
+    failsafeId = window.setTimeout(finish, duration + (reducedMotion ? 900 : 1800));
 
     return () => {
       window.cancelAnimationFrame(rafId);
       window.clearTimeout(timeoutId);
+      window.clearTimeout(failsafeId);
     };
   }, [onDone, reducedMotion]);
 

@@ -85,7 +85,7 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Калькулятор и Telegram-конверсия",
       },
       p1: {
-        name: ["ТЕПЛЫЕ КАДРЫ"],
+        name: ["ТЁПЛЫЕ КАДРЫ"],
         category: "Портфолио-лендинг",
         summary:
           "Персональный сайт с художественной подачей, галереей работ и лёгкой editorial-структурой для презентации специалиста.",

@@ -6,7 +6,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { portfolioContent } from "../content/portfolioContent";
+import { portfolioContent } from "../content/creativeContent";
 import type { Locale } from "../types/portfolio";
 
 interface LangContextValue {
