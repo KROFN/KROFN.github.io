@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { projects } from "../content/portfolioContent";
+import { projects } from "../content/creativeContent";
 import { useLang } from "../context/LangContext";
 import { useEnvironmentFlags } from "../hooks/useEnvironmentFlags";
 

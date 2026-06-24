@@ -6,7 +6,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { portfolioContent } from "../content/portfolioContent";
+import { portfolioContent } from "../content/creativeContent";
 import type { Locale } from "../types/portfolio";
 
 interface LangContextValue {
@@ -25,7 +25,7 @@ function resolveInitialLang(): Locale {
     return stored;
   }
 
-  return window.navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
+  return window.navigator.language.toLowerCase().startsWith("en") ? "en" : "ru";
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {
