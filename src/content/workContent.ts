@@ -153,9 +153,9 @@ export const workContent: Record<Locale, WorkCopy> = {
       },
     },
     labels: {
-      task: "Задача",
-      built: "Сделано",
-      result: "Результат",
+      task: "Фокус",
+      built: "Что собрано",
+      result: "Что изменилось",
       output: "Выход",
     },
     services: [
@@ -202,41 +202,41 @@ export const workContent: Record<Locale, WorkCopy> = {
         id: "smart-otdelka",
         title: "Смарт-Отделка",
         task:
-          "Показать услугу ремонта квартир так, чтобы посетитель быстро понял оффер и следующий шаг.",
+          "Лендинг для ремонта квартир, где первый экран сразу объясняет услугу, географию и путь к заявке.",
         built:
-          "Лендинг с крупной hero-подачей, блоками услуг, калькулятором и Telegram-переходом.",
+          "Крупная hero-подача, блоки услуг, калькулятор стоимости и прямой переход в Telegram.",
         result:
-          "Получилась коммерческая витрина с понятной структурой и быстрым маршрутом к заявке.",
+          "Страница перестала быть просто визиткой: у посетителя есть сценарий от первого интереса до обращения.",
       },
       {
         id: "p2",
         title: "IMGIFTED FEST",
         task:
-          "Упаковать фестиваль в страницу, где расписание, категории и атмосфера читаются сразу.",
+          "Страница фестиваля, которой нужно держать сразу две роли: афиша для эмоции и расписание для ориентации.",
         built:
-          "Адаптивную страницу события с афишной визуальной подачей и расписанием конкурсных дней.",
+          "Адаптивная структура с афишной подачей, сеткой конкурсных дней и быстрым чтением категорий.",
         result:
-          "Информация стала доступной без лишних объяснений на desktop и mobile.",
+          "Главное стало видно без инструкций: что происходит, когда приходить и где искать свой блок.",
       },
       {
         id: "p0",
         title: "Лак и Точка",
         task:
-          "Упаковать nail-сервис в выразительную страницу, где сразу видны настроение бренда, услуги и путь к записи.",
+          "Beauty-лендинг, который продаёт не только услугу, но и ощущение: аккуратно, уверенно, без салонного шума.",
         built:
-          "Лендинг-прототип с крупной типографикой, анимационной подачей, прайс-листом и быстрым переходом к контакту.",
+          "Крупная типографика, анимационный первый экран, прайс-лист и быстрый путь к записи.",
         result:
-          "Получилась премиальная web-витрина для beauty-услуги: атмосферная, адаптивная и понятная для клиента.",
+          "Получилась атмосферная web-витрина, где настроение бренда и практическая информация работают вместе.",
       },
       {
         id: "p5",
         title: "BLOG.KROFN",
         task:
-          "Сделать площадку для публикаций с публичной частью и удобным приватным управлением.",
+          "Личный блог должен выглядеть как медиа, но оставаться удобным рабочим инструментом для автора.",
         built:
-          "Fullstack-блог с редактором, SSR/SEO-страницами, загрузкой обложек и двуязычным интерфейсом.",
+          "Fullstack-платформа с редактором, SSR/SEO-страницами, загрузкой обложек и двуязычным интерфейсом.",
         result:
-          "Рабочий editorial-продукт, который можно развивать как личную медиа-платформу.",
+          "Публикации получили нормальную витрину, а управление осталось достаточно простым для регулярной работы.",
       },
     ],
     process: [
@@ -370,9 +370,9 @@ export const workContent: Record<Locale, WorkCopy> = {
       },
     },
     labels: {
-      task: "Task",
-      built: "Built",
-      result: "Result",
+      task: "Focus",
+      built: "Built around",
+      result: "Shift",
       output: "Output",
     },
     services: [
@@ -419,41 +419,41 @@ export const workContent: Record<Locale, WorkCopy> = {
         id: "smart-otdelka",
         title: "Smart-Finishing",
         task:
-          "Present an apartment renovation service so visitors quickly understand the offer and next step.",
+          "A renovation landing page where the first screen explains the service, location and path to inquiry.",
         built:
-          "A landing page with a bold hero, service blocks, calculator and Telegram handoff.",
+          "A bold hero, service blocks, price calculator and direct Telegram handoff.",
         result:
-          "A commercial showcase with clear structure and a fast route to inquiry.",
+          "The page became a guided route from first interest to contact, not just a static business card.",
       },
       {
         id: "p2",
         title: "IMGIFTED FEST",
         task:
-          "Package a festival into a page where the schedule, categories and atmosphere are immediately readable.",
+          "A festival page that had to work as both an emotional poster and a practical schedule.",
         built:
-          "A responsive event page with poster-like visual direction and competition-day schedule.",
+          "Responsive structure, poster-like visual direction, competition-day grids and readable category blocks.",
         result:
-          "The information became easy to scan on desktop and mobile without extra explanation.",
+          "Visitors can understand what is happening, when to come and where their category lives without instructions.",
       },
       {
         id: "p0",
         title: "Lak and Point",
         task:
-          "Package a nail service into an expressive page where the brand mood, services and booking path are clear at a glance.",
+          "A beauty landing page that sells the feeling of the service as much as the service itself.",
         built:
-          "A landing prototype with oversized typography, motion direction, a price-list section and a fast contact handoff.",
+          "Oversized typography, animated first screen, price-list section and a fast booking handoff.",
         result:
-          "A premium-feeling web showcase for a beauty service: atmospheric, responsive and easy for clients to scan.",
+          "The brand mood and practical details now sit in one clear, atmospheric web showcase.",
       },
       {
         id: "p5",
         title: "BLOG.KROFN",
         task:
-          "Create a publishing space with a public face and convenient private management.",
+          "A personal blog that should feel like a media surface while staying practical for the author.",
         built:
-          "A fullstack blog with an editor, SSR/SEO post pages, cover uploads and bilingual UI.",
+          "A fullstack platform with an editor, SSR/SEO post pages, cover uploads and bilingual UI.",
         result:
-          "A working editorial product that can grow as a personal media platform.",
+          "The public side gained a proper editorial shell, while publishing stays simple enough for regular use.",
       },
     ],
     process: [

@@ -126,14 +126,17 @@ export default function WorkSite() {
                   <div className="work-example-copy">
                     <span>{String(index + 1).padStart(2, "0")}</span>
                     <h3>{example.title}</h3>
-                    <dl className="work-case-details">
-                      <dt>{copy.labels.task}</dt>
-                      <dd>{example.task}</dd>
-                      <dt>{copy.labels.built}</dt>
-                      <dd>{example.built}</dd>
-                      <dt>{copy.labels.result}</dt>
-                      <dd>{example.result}</dd>
-                    </dl>
+                    <p className="work-case-lead">{example.task}</p>
+                    <ul className="work-case-points">
+                      <li>
+                        <strong>{copy.labels.built}</strong>
+                        <span>{example.built}</span>
+                      </li>
+                      <li>
+                        <strong>{copy.labels.result}</strong>
+                        <span>{example.result}</span>
+                      </li>
+                    </ul>
                     <div className="work-example-links">
                       {project?.demoUrl ? (
                         <a
