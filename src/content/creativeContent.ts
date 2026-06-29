@@ -9,31 +9,30 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "p1",
-    image: "/img/p1.jpg",
+    image: "/img/warm-frames.jpg",
     demoUrl: "https://karataeva-site.vercel.app/",
     repoUrl: "https://github.com/KROFN/karataeva-site",
   },
   {
     id: "p0",
-    image: "/img/smart-placeholder.jpg",
-    demoUrl: "https://smart-otdelka.vercel.app/",
-    repoUrl: "https://github.com/KROFN/smart-otdelka",
+    image: "/img/lak-and-point.png",
+    repoUrl: "https://github.com/KROFN/lak-and-point",
   },
   {
     id: "p3",
-    image: "/img/p3.jpg",
+    image: "/img/fincross.jpg",
     demoUrl: "https://kraskovsky-crossword.vercel.app/",
     repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
   },
   {
     id: "p2",
-    image: "/img/p2.jpg",
+    image: "/img/imgifted-fest.jpg",
     demoUrl: "https://imgifted-fest.vercel.app/",
     repoUrl: "https://github.com/KROFN/imgifted-fest",
   },
   {
     id: "p4",
-    image: "/img/p4.jpg",
+    image: "/img/melodine.jpg",
     repoUrl: "https://github.com/KROFN/melodine",
   },
 ];
@@ -77,12 +76,12 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Editorial publishing with private admin flows",
       },
       p0: {
-        name: ["СМАРТ-ОТДЕЛКА"],
-        category: "Лендинг / Ремонт квартир",
+        name: ["ЛАК И ТОЧКА"],
+        category: "Лендинг / Beauty-сервис",
         summary:
-          "Портфолио-лендинг для вымышленной компании по ремонту квартир: аккуратный визуальный стиль, калькулятор итоговой цены и быстрый переход в Telegram для заявки.",
-        tech: "React · TypeScript · Vite",
-        note: "Калькулятор и Telegram-конверсия",
+          "Визуальный web-прототип для nail-сервиса: выразительная hero-подача, адаптивная структура, прайс-лист и быстрый контактный сценарий для записи.",
+        tech: "React · JavaScript · Vite · GSAP",
+        note: "Beauty landing with price-list flow",
       },
       p1: {
         name: ["ТЁПЛЫЕ КАДРЫ"],
@@ -284,12 +283,12 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Editorial publishing with private admin flows",
       },
       p0: {
-        name: ["SMART-OTDELKA"],
-        category: "Landing / Apartment Renovation",
+        name: ["LAK AND POINT"],
+        category: "Landing / Beauty Service",
         summary:
-          "A portfolio landing for a fictional apartment renovation company, featuring a final-price calculator, polished UI direction and direct Telegram lead routing.",
-        tech: "React · TypeScript · Vite",
-        note: "Calculator-driven conversion concept",
+          "A visual web prototype for a beauty and nail service, combining a dramatic hero, responsive landing structure, price-list presentation and a clear contact flow.",
+        tech: "React · JavaScript · Vite · GSAP",
+        note: "Beauty landing with price-list flow",
       },
       p1: {
         name: ["WARM FRAMES"],

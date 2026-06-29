@@ -1,5 +1,5 @@
 import { projects } from "./creativeContent";
-import type { Locale, ProjectId } from "../types/portfolio";
+import type { Locale, ProjectId, ProjectItem } from "../types/portfolio";
 
 export const contacts = {
   telegram: "https://t.me/krofn",
@@ -18,8 +18,24 @@ interface WorkServiceMoreCopy {
   cta: string;
 }
 
+type WorkProjectId = ProjectId | "smart-otdelka";
+
+type WorkProjectItem = Omit<ProjectItem, "id"> & {
+  id: WorkProjectId;
+};
+
+const workProjects: WorkProjectItem[] = [
+  {
+    id: "smart-otdelka",
+    image: "/img/smart-otdelka.jpg",
+    demoUrl: "https://smart-otdelka.vercel.app/",
+    repoUrl: "https://github.com/KROFN/smart-otdelka",
+  },
+  ...projects,
+];
+
 interface WorkExampleCopy {
-  id: ProjectId;
+  id: WorkProjectId;
   title: string;
   task: string;
   built: string;
@@ -183,7 +199,7 @@ export const workContent: Record<Locale, WorkCopy> = {
     },
     examples: [
       {
-        id: "p0",
+        id: "smart-otdelka",
         title: "Смарт-Отделка",
         task:
           "Показать услугу ремонта квартир так, чтобы посетитель быстро понял оффер и следующий шаг.",
@@ -203,14 +219,14 @@ export const workContent: Record<Locale, WorkCopy> = {
           "Информация стала доступной без лишних объяснений на desktop и mobile.",
       },
       {
-        id: "p1",
-        title: "Тёплые Кадры",
+        id: "p0",
+        title: "Лак и Точка",
         task:
-          "Собрать персональную web-витрину для специалиста с галереей и мягкой подачей доверия.",
+          "Упаковать nail-сервис в выразительную страницу, где сразу видны настроение бренда, услуги и путь к записи.",
         built:
-          "Портфолио-страницу с визуальным характером, галереей и editorial-структурой.",
+          "Лендинг-прототип с крупной типографикой, анимационной подачей, прайс-листом и быстрым переходом к контакту.",
         result:
-          "Получился сайт, который показывает стиль, работы и личный тон специалиста.",
+          "Получилась премиальная web-витрина для beauty-услуги: атмосферная, адаптивная и понятная для клиента.",
       },
       {
         id: "p5",
@@ -400,7 +416,7 @@ export const workContent: Record<Locale, WorkCopy> = {
     },
     examples: [
       {
-        id: "p0",
+        id: "smart-otdelka",
         title: "Smart-Finishing",
         task:
           "Present an apartment renovation service so visitors quickly understand the offer and next step.",
@@ -420,14 +436,14 @@ export const workContent: Record<Locale, WorkCopy> = {
           "The information became easy to scan on desktop and mobile without extra explanation.",
       },
       {
-        id: "p1",
-        title: "Warm Frames",
+        id: "p0",
+        title: "Lak and Point",
         task:
-          "Create a personal web showcase for a specialist with a gallery and trust-building tone.",
+          "Package a nail service into an expressive page where the brand mood, services and booking path are clear at a glance.",
         built:
-          "A portfolio page with visual character, gallery flow and editorial structure.",
+          "A landing prototype with oversized typography, motion direction, a price-list section and a fast contact handoff.",
         result:
-          "A site that presents style, work examples and the specialist's personal voice.",
+          "A premium-feeling web showcase for a beauty service: atmospheric, responsive and easy for clients to scan.",
       },
       {
         id: "p5",
@@ -524,6 +540,6 @@ export const workContent: Record<Locale, WorkCopy> = {
   },
 };
 
-export function getWorkProject(id: ProjectId) {
-  return projects.find((project) => project.id === id);
+export function getWorkProject(id: WorkProjectId) {
+  return workProjects.find((project) => project.id === id);
 }
