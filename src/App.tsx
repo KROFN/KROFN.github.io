@@ -16,6 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 type RouteKey = "gateway" | "creative" | "work" | "unknown";
 
+const ROUTE_IMAGE_WAIT_LIMIT = 7000;
+
 function getRoute(pathname: string): RouteKey {
   const normalized = pathname.replace(/\/+$/, "") || "/";
 
@@ -141,13 +143,98 @@ function renderRoute(route: RouteKey): ReactNode {
   return <GatewaySite />;
 }
 
+function useRouteImageLoad(route: RouteKey) {
+  const [assetProgress, setAssetProgress] = useState(0);
+  const [assetsReady, setAssetsReady] = useState(false);
+
+  useEffect(() => {
+    let isCancelled = false;
+    let frameId = 0;
+    let timeoutId = 0;
+    const cleanupCallbacks: Array<() => void> = [];
+
+    setAssetProgress(0);
+    setAssetsReady(false);
+
+    const markReady = () => {
+      if (isCancelled) {
+        return;
+      }
+
+      setAssetProgress(1);
+      setAssetsReady(true);
+    };
+
+    frameId = window.requestAnimationFrame(() => {
+      if (isCancelled) {
+        return;
+      }
+
+      const page = document.querySelector<HTMLElement>(`.page-${route}`);
+      const images = Array.from(page?.querySelectorAll<HTMLImageElement>("img[src]") ?? []);
+
+      if (!images.length) {
+        markReady();
+        return;
+      }
+
+      let finishedCount = images.filter((image) => image.complete).length;
+      setAssetProgress(finishedCount / images.length);
+
+      if (finishedCount >= images.length) {
+        markReady();
+        return;
+      }
+
+      const handleImageDone = () => {
+        if (isCancelled) {
+          return;
+        }
+
+        finishedCount += 1;
+        setAssetProgress(Math.min(finishedCount / images.length, 1));
+
+        if (finishedCount >= images.length) {
+          markReady();
+        }
+      };
+
+      images.forEach((image) => {
+        if (image.complete) {
+          return;
+        }
+
+        image.addEventListener("load", handleImageDone, { once: true });
+        image.addEventListener("error", handleImageDone, { once: true });
+        cleanupCallbacks.push(() => {
+          image.removeEventListener("load", handleImageDone);
+          image.removeEventListener("error", handleImageDone);
+        });
+      });
+
+      timeoutId = window.setTimeout(markReady, ROUTE_IMAGE_WAIT_LIMIT);
+    });
+
+    return () => {
+      isCancelled = true;
+      window.cancelAnimationFrame(frameId);
+      window.clearTimeout(timeoutId);
+      cleanupCallbacks.forEach((cleanup) => cleanup());
+    };
+  }, [route]);
+
+  return { assetProgress, assetsReady };
+}
+
 function PortfolioShell() {
-  const [isReady, setIsReady] = useState(false);
+  const [readyRoute, setReadyRoute] = useState<RouteKey | null>(null);
   const pathname = usePathname();
   const route = useMemo(() => getRoute(pathname), [pathname]);
   const { copy } = useLang();
   const { canHover, reducedMotion } = useEnvironmentFlags();
-  const handleLoaderDone = useCallback(() => setIsReady(true), []);
+  const { assetProgress, assetsReady } = useRouteImageLoad(route);
+  const isReady = readyRoute === route;
+  const handleLoaderDone = useCallback(() => setReadyRoute(route), [route]);
 
   useInternalNavigation();
 
@@ -227,6 +314,8 @@ function PortfolioShell() {
           label={copy.ui.loading}
           lead={copy.ui.loaderLead}
           trail={copy.ui.loaderTrail}
+          assetProgress={assetProgress}
+          assetsReady={assetsReady}
           onDone={handleLoaderDone}
         />
       )}

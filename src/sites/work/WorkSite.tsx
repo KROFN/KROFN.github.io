@@ -1,6 +1,8 @@
-import type { MouseEvent, ReactNode } from "react";
+import { useEffect, useRef, type MouseEvent, type ReactNode } from "react";
+import { gsap } from "gsap";
 import { useLang } from "../../context/LangContext";
 import { contacts, getWorkProject, workContent } from "../../content/workContent";
+import { useEnvironmentFlags } from "../../hooks/useEnvironmentFlags";
 
 function WorkSection({
   id,
@@ -17,7 +19,7 @@ function WorkSection({
 }) {
   return (
     <section id={id} className="work-section section-shell">
-      <div className="work-section-head">
+      <div className="work-section-head" data-work-reveal>
         <span>{kicker}</span>
         <h2>{title}</h2>
         {intro ? <p>{intro}</p> : null}
@@ -29,7 +31,9 @@ function WorkSection({
 
 export default function WorkSite() {
   const { lang } = useLang();
+  const { reducedMotion } = useEnvironmentFlags();
   const copy = workContent[lang];
+  const siteRef = useRef<HTMLElement>(null);
   const scrollToServices = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -48,13 +52,54 @@ export default function WorkSite() {
     });
   };
 
+  useEffect(() => {
+    if (!siteRef.current) {
+      return;
+    }
+
+    const revealTargets = siteRef.current.querySelectorAll<HTMLElement>("[data-work-reveal]");
+
+    if (!revealTargets.length) {
+      return;
+    }
+
+    if (reducedMotion) {
+      gsap.set(revealTargets, {
+        y: 0,
+        autoAlpha: 1,
+        clearProps: "transform,opacity,visibility",
+      });
+      return;
+    }
+
+    const context = gsap.context(() => {
+      gsap.fromTo(
+        "[data-work-reveal]",
+        {
+          y: 22,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.72,
+          stagger: 0.07,
+          ease: "power3.out",
+          clearProps: "transform,opacity,visibility",
+        },
+      );
+    }, siteRef);
+
+    return () => context.revert();
+  }, [reducedMotion]);
+
   return (
-    <main className="work-site">
+    <main ref={siteRef} className="work-site">
         <section className="work-hero section-shell">
           <div className="work-hero-content">
-            <h1>{copy.hero.headline}</h1>
-            <p>{copy.hero.subtext}</p>
-            <div className="work-hero-actions">
+            <h1 data-work-reveal>{copy.hero.headline}</h1>
+            <p data-work-reveal>{copy.hero.subtext}</p>
+            <div className="work-hero-actions" data-work-reveal>
               <a href={contacts.telegram} className="work-button is-primary">
                 {copy.hero.telegramCta}
               </a>
@@ -66,7 +111,7 @@ export default function WorkSite() {
                 {copy.hero.servicesCta}
               </a>
             </div>
-            <div className="work-hero-trust" aria-label={copy.hero.panelAria}>
+            <div className="work-hero-trust" aria-label={copy.hero.panelAria} data-work-reveal>
               {copy.hero.facts.map((fact) => (
                 <div key={fact}>{fact}</div>
               ))}
@@ -82,7 +127,7 @@ export default function WorkSite() {
         >
           <div className="work-service-grid">
             {copy.services.map((service) => (
-              <article key={service.title} className="work-card">
+              <article key={service.title} className="work-card" data-work-reveal>
                 <div className="work-card-top">
                   <h3>{service.title}</h3>
                   <p>{service.outcome}</p>
@@ -95,7 +140,7 @@ export default function WorkSite() {
               </article>
             ))}
           </div>
-          <div className="work-service-more">
+          <div className="work-service-more" data-work-reveal>
             <div>
               <h3>{copy.servicesMore.title}</h3>
               <p>{copy.servicesMore.text}</p>
@@ -117,7 +162,7 @@ export default function WorkSite() {
               const project = getWorkProject(example.id);
 
               return (
-                <article key={example.id} className="work-example">
+                <article key={example.id} className="work-example" data-work-reveal>
                   <div className="work-example-media">
                     {project ? (
                       <img src={project.image} alt={`${example.title} preview`} />
@@ -169,7 +214,7 @@ export default function WorkSite() {
         >
           <div className="work-process-grid">
             {copy.process.map((step, index) => (
-              <article key={step.title} className="work-process-step">
+              <article key={step.title} className="work-process-step" data-work-reveal>
                 <span>{String(index + 1).padStart(2, "0")} /</span>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
@@ -187,7 +232,7 @@ export default function WorkSite() {
           title={copy.sections.estimate.title}
           intro={copy.sections.estimate.intro}
         >
-          <div className="work-estimate">
+          <div className="work-estimate" data-work-reveal>
             <div className="work-estimate-main">
               <div className="work-budget-tiers">
                 {copy.estimate.tiers.map((tier) => (
@@ -224,7 +269,7 @@ export default function WorkSite() {
           title={copy.sections.contact.title}
           intro={copy.sections.contact.intro}
         >
-          <div className="work-contact">
+          <div className="work-contact" data-work-reveal>
             <div className="work-contact-lead">
               <p className="work-contact-lead-title">
                 {copy.contact.leadTitle}

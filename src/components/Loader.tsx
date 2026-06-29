@@ -6,60 +6,71 @@ interface LoaderProps {
   label: string;
   lead: string;
   trail: string;
+  assetProgress: number;
+  assetsReady: boolean;
   onDone: () => void;
 }
 
-export default function Loader({ label, lead, trail, onDone }: LoaderProps) {
-  const [value, setValue] = useState(0);
+export default function Loader({
+  label,
+  lead,
+  trail,
+  assetProgress,
+  assetsReady,
+  onDone,
+}: LoaderProps) {
+  const [timeProgress, setTimeProgress] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
+  const isDoneRef = useRef(false);
   const { reducedMotion } = useEnvironmentFlags();
+  const value =
+    assetsReady && timeProgress >= 1
+      ? 100
+      : Math.min(
+          99,
+          Math.round(timeProgress * 76 + Math.max(0, Math.min(assetProgress, 1)) * 24),
+        );
 
   useEffect(() => {
     let rafId = 0;
-    let timeoutId = 0;
-    let failsafeId = 0;
-    let isDone = false;
     const duration = reducedMotion ? 700 : 1800;
     const start = performance.now();
-
-    const finish = () => {
-      if (isDone) {
-        return;
-      }
-
-      isDone = true;
-      onDone();
-    };
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * 100));
+      setTimeProgress(eased);
 
       if (progress < 1) {
         rafId = window.requestAnimationFrame(tick);
-        return;
       }
-
-      timeoutId = window.setTimeout(() => {
-        gsap.to(rootRef.current, {
-          yPercent: -100,
-          duration: reducedMotion ? 0.4 : 0.95,
-          ease: "power4.inOut",
-          onComplete: finish,
-        });
-      }, reducedMotion ? 60 : 200);
     };
 
     rafId = window.requestAnimationFrame(tick);
-    failsafeId = window.setTimeout(finish, duration + (reducedMotion ? 900 : 1800));
 
     return () => {
       window.cancelAnimationFrame(rafId);
-      window.clearTimeout(timeoutId);
-      window.clearTimeout(failsafeId);
     };
-  }, [onDone, reducedMotion]);
+  }, [reducedMotion]);
+
+  useEffect(() => {
+    if (!assetsReady || timeProgress < 1 || isDoneRef.current) {
+      return;
+    }
+
+    isDoneRef.current = true;
+
+    const timeoutId = window.setTimeout(() => {
+      gsap.to(rootRef.current, {
+        yPercent: -100,
+        duration: reducedMotion ? 0.4 : 0.95,
+        ease: "power4.inOut",
+        onComplete: onDone,
+      });
+    }, reducedMotion ? 60 : 200);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [assetsReady, onDone, reducedMotion, timeProgress]);
 
   return (
     <div ref={rootRef} className="loader">
