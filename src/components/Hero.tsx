@@ -59,16 +59,18 @@ export default function Hero() {
 
       <div className="hero-grid">
         <div className="hero-title-block">
-          <div className="line-mask">
-            <div data-hero-line className="hero-name hero-name-primary">
-              {copy.hero.name[0]}
-            </div>
-          </div>
-          <div className="line-mask">
-            <div data-hero-line className="hero-name hero-name-secondary">
-              {copy.hero.name[1]}
-            </div>
-          </div>
+          <h1 className="hero-name-heading" aria-label={copy.hero.name.join(" ")}>
+            <span className="line-mask">
+              <span data-hero-line className="hero-name hero-name-primary">
+                {copy.hero.name[0]}
+              </span>
+            </span>
+            <span className="line-mask">
+              <span data-hero-line className="hero-name hero-name-secondary">
+                {copy.hero.name[1]}
+              </span>
+            </span>
+          </h1>
           <div className="line-mask hero-role-mask">
             <div data-hero-line className="hero-role">
               {copy.hero.role}

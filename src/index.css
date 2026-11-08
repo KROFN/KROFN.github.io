@@ -440,6 +440,14 @@ img {
   min-width: 0;
 }
 
+.hero-name-heading {
+  margin: 0;
+  font-weight: inherit;
+}
+.hero-name-heading .line-mask,
+.hero-name-heading .hero-name {
+  display: block;
+}
 .hero-name {
   font-family: var(--font-display);
   line-height: 0.86;
