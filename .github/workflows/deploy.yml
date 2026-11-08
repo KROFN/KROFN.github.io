@@ -33,6 +33,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Validate generated pages
+        run: npm run test:routes
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

@@ -34,19 +34,19 @@ export default function WorkSite() {
   const { reducedMotion } = useEnvironmentFlags();
   const copy = workContent[lang];
   const siteRef = useRef<HTMLElement>(null);
-  const scrollToServices = (event: MouseEvent<HTMLAnchorElement>) => {
+  const scrollToProjects = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     event.stopPropagation();
 
-    const services = document.getElementById("services");
+    const projects = document.getElementById("cases");
 
-    if (!services) {
+    if (!projects) {
       return;
     }
 
-    window.history.replaceState({}, "", "#services");
+    window.history.replaceState({}, "", "#cases");
     window.scrollTo({
-      top: services.offsetTop,
+      top: projects.offsetTop,
       left: 0,
       behavior: "smooth",
     });
@@ -104,11 +104,11 @@ export default function WorkSite() {
                 {copy.hero.telegramCta}
               </a>
               <a
-                href="#services"
+                href="#cases"
                 className="work-button"
-                onClickCapture={scrollToServices}
+                onClickCapture={scrollToProjects}
               >
-                {copy.hero.servicesCta}
+                {copy.hero.projectsCta}
               </a>
             </div>
             <div className="work-hero-trust" aria-label={copy.hero.panelAria} data-work-reveal>
@@ -118,6 +118,66 @@ export default function WorkSite() {
             </div>
           </div>
         </section>
+
+        <WorkSection
+          id="cases"
+          kicker={copy.sections.examples.kicker}
+          title={copy.sections.examples.title}
+          intro={copy.sections.examples.intro}
+        >
+          <div className="work-example-list">
+            {copy.examples.map((example, index) => {
+              const project = getWorkProject(example.id);
+
+              return (
+                <article key={example.id} className="work-example" data-work-reveal>
+                  <div className="work-example-media">
+                    {project ? (
+                      <img src={project.image} alt={`${example.title} preview`} />
+                    ) : null}
+                  </div>
+                  <div className="work-example-copy">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{example.title}</h3>
+                    <p className="work-case-status">{example.status}</p>
+                    <p className="work-case-lead">{example.task}</p>
+                    <ul className="work-case-points">
+                      <li>
+                        <strong>{copy.labels.role}</strong>
+                        <span>{example.role}</span>
+                      </li>
+                      <li>
+                        <strong>{copy.labels.built}</strong>
+                        <span>{example.built}</span>
+                      </li>
+                      <li>
+                        <strong>{copy.labels.result}</strong>
+                        <span>{example.result}</span>
+                      </li>
+                    </ul>
+                    <div className="work-example-links">
+                      {project?.demoUrl ? (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="is-primary-link"
+                        >
+                          {copy.buttons.demo}
+                        </a>
+                      ) : null}
+                      {project?.repoUrl ? (
+                        <a href={project.repoUrl} target="_blank" rel="noreferrer">
+                          {copy.buttons.code}
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </WorkSection>
 
         <WorkSection
           id="services"
@@ -152,57 +212,29 @@ export default function WorkSite() {
         </WorkSection>
 
         <WorkSection
-          id="cases"
-          kicker={copy.sections.examples.kicker}
-          title={copy.sections.examples.title}
-          intro={copy.sections.examples.intro}
+          id="partners"
+          kicker={copy.sections.partners.kicker}
+          title={copy.sections.partners.title}
+          intro={copy.sections.partners.intro}
         >
-          <div className="work-example-list">
-            {copy.examples.map((example, index) => {
-              const project = getWorkProject(example.id);
-
-              return (
-                <article key={example.id} className="work-example" data-work-reveal>
-                  <div className="work-example-media">
-                    {project ? (
-                      <img src={project.image} alt={`${example.title} preview`} />
-                    ) : null}
-                  </div>
-                  <div className="work-example-copy">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <h3>{example.title}</h3>
-                    <p className="work-case-lead">{example.task}</p>
-                    <ul className="work-case-points">
-                      <li>
-                        <strong>{copy.labels.built}</strong>
-                        <span>{example.built}</span>
-                      </li>
-                      <li>
-                        <strong>{copy.labels.result}</strong>
-                        <span>{example.result}</span>
-                      </li>
-                    </ul>
-                    <div className="work-example-links">
-                      {project?.demoUrl ? (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="is-primary-link"
-                        >
-                          {copy.buttons.demo}
-                        </a>
-                      ) : null}
-                      {project?.repoUrl ? (
-                        <a href={project.repoUrl} target="_blank" rel="noreferrer">
-                          {copy.buttons.code}
-                        </a>
-                      ) : null}
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+          <div className="work-partner-panel" data-work-reveal>
+            <div className="work-partner-summary">
+              <h3>{copy.partners.title}</h3>
+              <p>{copy.partners.text}</p>
+              <a
+                href={contacts.telegram}
+                className="work-button is-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.partners.cta}
+              </a>
+            </div>
+            <ul className="work-partner-list">
+              {copy.partners.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
           </div>
         </WorkSection>
 

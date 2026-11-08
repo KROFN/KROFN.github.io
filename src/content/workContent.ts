@@ -40,6 +40,8 @@ interface WorkExampleCopy {
   task: string;
   built: string;
   result: string;
+  status: string;
+  role: string;
 }
 
 interface WorkProcessStep {
@@ -54,13 +56,14 @@ interface WorkCopy {
     headline: string;
     subtext: string;
     telegramCta: string;
-    servicesCta: string;
+    projectsCta: string;
     panelAria: string;
     facts: string[];
   };
   sections: {
     services: { kicker: string; title: string; intro: string };
     examples: { kicker: string; title: string; intro: string };
+    partners: { kicker: string; title: string; intro: string };
     process: { kicker: string; title: string; intro: string };
     estimate: { kicker: string; title: string; intro: string };
     contact: { kicker: string; title: string; intro: string };
@@ -70,11 +73,13 @@ interface WorkCopy {
     task: string;
     built: string;
     result: string;
+    role: string;
     output: string;
   };
   services: WorkServiceCopy[];
   servicesMore: WorkServiceMoreCopy;
   examples: WorkExampleCopy[];
+  partners: { title: string; text: string; bullets: string[]; cta: string };
   process: WorkProcessStep[];
   estimate: {
     intro: string;
@@ -107,46 +112,51 @@ export const workContent: Record<Locale, WorkCopy> = {
   ru: {
     navAria: "Коммерческие услуги KROFN",
     hero: {
-      headline: "Превращаю сырые идеи в проекты, которые можно показать",
+      headline: "Разрабатываю сайты и веб-инструменты для бизнеса",
       subtext:
-        "Структура, визуал и готовый результат: презентация, сайт или рабочий инструмент.",
-      telegramCta: "Написать в Telegram",
-      servicesCta: "Смотреть услуги",
+        "Лендинги, многостраничные сайты и доработки. Работаю напрямую и подключаюсь к проектам агентств и специалистов по рекламе — от готового макета до технического запуска.",
+      telegramCta: "Обсудить задачу",
+      projectsCta: "Посмотреть работы",
       panelAria: "Коротко о работе",
       facts: [
         "Ответ в течение дня",
-        "PPTX / PDF / сайт / исходники",
-        "Бриф → финал",
-        "Правки до старта",
+        "Лендинги / многостраничные сайты",
+        "По ТЗ или с нуля",
+        "Исходники и передача",
       ],
     },
     sections: {
       services: {
-        kicker: "01 / Что делаю",
+        kicker: "02 / Что делаю",
         title: "Услуги",
         intro:
-          "Выбери формат задачи: от презентации и сайта до визуальной упаковки или рабочего инструмента.",
+          "От лендинга и доработок до небольших инструментов. Договоримся о результате до начала работы.",
       },
       examples: {
-        kicker: "02 / Доказательства",
-        title: "Кейсы",
+        kicker: "01 / Работы",
+        title: "Избранные проекты",
         intro:
-          "Несколько работ, где идея превращалась в понятную страницу, систему или инструмент.",
+          "Демонстрационные работы и авторские проекты. Для каждого — моя роль и проверяемый результат.",
+      },
+      partners: {
+        kicker: "03 / Сотрудничество",
+        title: "Для агентств и специалистов по рекламе",
+        intro: "Можно передать отдельную задачу, готовый макет или согласованный участок разработки.",
       },
       process: {
-        kicker: "03 / Процесс",
+        kicker: "04 / Процесс",
         title: "Как проходит работа",
         intro:
           "Путь от сырого описания до результата, который можно передать и показать.",
       },
       estimate: {
-        kicker: "04 / Бюджет",
+        kicker: "05 / Бюджет",
         title: "Оценка и бюджет",
         intro:
           "Оценка зависит от объёма, сроков и того, насколько глубоко нужно собирать задачу.",
       },
       contact: {
-        kicker: "05 / Контакт",
+        kicker: "06 / Контакт",
         title: "Начать проект",
         intro:
           "Пришли короткое описание — я помогу разложить задачу и понять следующий шаг.",
@@ -154,42 +164,31 @@ export const workContent: Record<Locale, WorkCopy> = {
     },
     labels: {
       task: "Фокус",
-      built: "Что собрано",
-      result: "Что изменилось",
+      built: "Реализация",
+      result: "Результат",
+      role: "Моя роль",
       output: "Выход",
     },
     services: [
       {
-        title: "Презентации и визуальная упаковка",
-        outcome:
-          "Помогаю превратить текст и идею в понятный deck для защиты, продажи или выступления.",
-        deliverables: [
-          "PPTX / PDF",
-          "структура и визуальный стиль",
-          "финальная версия для показа",
-        ],
+        title: "Сайты и лендинги",
+        outcome: "Адаптивные страницы для представления услуг, продуктов и рекламных кампаний.",
+        deliverables: ["структура и вёрстка", "адаптив под мобильные", "публикация и исходники"],
       },
       {
-        title: "Сайты и web-витрины",
-        outcome:
-          "Собираю страницу, которая объясняет проект, человека или услугу без лишнего шума.",
-        deliverables: ["адаптивная страница", "demo/deploy", "исходники"],
-      },
-      {
-        title: "Дизайн и оформление",
-        outcome:
-          "Привожу материалы к единому визуальному языку: от афиши до карточек и обложек.",
-        deliverables: [
-          "макеты",
-          "экспорт под нужный формат",
-          "визуальная система",
-        ],
+        title: "Доработки и интеграции",
+        outcome: "Подключаюсь к существующему сайту, чтобы исправить конкретную проблему или добавить функцию.",
+        deliverables: ["исправление интерфейсов", "формы и сценарии обращения", "интеграции — по согласованному ТЗ"],
       },
       {
         title: "Инструменты и автоматизация",
-        outcome:
-          "Делаю рабочие скрипты, CLI/TUI, плагины и мини-системы под конкретную рутину.",
-        deliverables: ["рабочий инструмент", "инструкция запуска", "исходники"],
+        outcome: "Небольшие веб-инструменты, скрипты и автоматизация повторяющихся задач.",
+        deliverables: ["рабочий инструмент", "проверка сценариев", "инструкция и код"],
+      },
+      {
+        title: "Дизайн и презентации",
+        outcome: "Дополнительная визуальная помощь: оформление, презентации и материалы для показа.",
+        deliverables: ["структура и визуальный стиль", "макеты", "экспорт PPTX / PDF"],
       },
     ],
     servicesMore: {
@@ -201,44 +200,51 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "smart-otdelka",
         title: "Смарт-Отделка",
-        task:
-          "Лендинг для ремонта квартир, где первый экран сразу объясняет услугу, географию и путь к заявке.",
-        built:
-          "Крупная hero-подача, блоки услуг, калькулятор стоимости и прямой переход в Telegram.",
-        result:
-          "Страница перестала быть просто визиткой: у посетителя есть сценарий от первого интереса до обращения.",
-      },
-      {
-        id: "p2",
-        title: "IMGIFTED FEST",
-        task:
-          "Страница фестиваля, которой нужно держать сразу две роли: афиша для эмоции и расписание для ориентации.",
-        built:
-          "Адаптивная структура с афишной подачей, сеткой конкурсных дней и быстрым чтением категорий.",
-        result:
-          "Главное стало видно без инструкций: что происходит, когда приходить и где искать свой блок.",
+        status: "Демо-проект · доступен сайт",
+        role: "Структура страницы, UI, frontend и калькулятор.",
+        task: "Концепт посадочной страницы для услуг ремонта с понятным сценарием обращения.",
+        built: "Адаптивный интерфейс, разделы услуг, калькулятор и ссылка на обращение в Telegram.",
+        result: "Рабочее демо с переходом от изучения услуг к заявке. Коммерческая конверсия не измерялась.",
       },
       {
         id: "p0",
         title: "Лак и Точка",
-        task:
-          "Beauty-лендинг, который продаёт не только услугу, но и ощущение: аккуратно, уверенно, без салонного шума.",
-        built:
-          "Крупная типографика, анимационный первый экран, прайс-лист и быстрый путь к записи.",
-        result:
-          "Получилась атмосферная web-витрина, где настроение бренда и практическая информация работают вместе.",
+        status: "Авторский концепт · исходники",
+        role: "Визуальная система, анимация, адаптивный frontend.",
+        task: "Прототип beauty-лендинга с сочетанием атмосферы и практичной информации.",
+        built: "Главный экран, анимации, прайс-лист и сценарий записи.",
+        result: "Готовый frontend-концепт; опубликованные показатели продаж не заявляются.",
       },
       {
-        id: "p5",
-        title: "BLOG.KROFN",
-        task:
-          "Личный блог должен выглядеть как медиа, но оставаться удобным рабочим инструментом для автора.",
-        built:
-          "Fullstack-платформа с редактором, SSR/SEO-страницами, загрузкой обложек и двуязычным интерфейсом.",
-        result:
-          "Публикации получили нормальную витрину, а управление осталось достаточно простым для регулярной работы.",
+        id: "p2",
+        title: "IMGIFTED FEST",
+        status: "Демонстрационная работа · исходники",
+        role: "Структура, визуальная подача, адаптивная вёрстка.",
+        task: "Страница мероприятия с афишной подачей и расписанием категорий.",
+        built: "Секции дней, категорий выступлений и навигация по программе.",
+        result: "Собран демонстрационный интерфейс для просмотра программы на разных экранах.",
+      },
+      {
+        id: "p3",
+        title: "FINCROSS",
+        status: "Авторский веб-проект · исходники",
+        role: "Интерактивный frontend и логика игрового сценария.",
+        task: "Веб-игра с проверкой ответов и управлением состоянием раунда.",
+        built: "Игровой интерфейс, таймер, проверка ответов и очки.",
+        result: "Реализован самостоятельный интерактивный сценарий на React и TypeScript.",
       },
     ],
+    partners: {
+      title: "Техническая часть — на мне",
+      text: "Работаю с заказчиками напрямую или в связке с вашей командой. Подхожу для отдельной страницы, доработки существующего сайта или разработки по готовому дизайну.",
+      bullets: [
+        "Получаю ТЗ, макет или ссылку на текущий сайт; уточняю границы задачи.",
+        "Согласуем результат, срок и критерии приёмки до начала.",
+        "Передаю исходники и инструкции; дополнительные изменения оцениваем отдельно.",
+        "Формат общения, NDA и работа под брендом агентства — по договорённости.",
+      ],
+      cta: "Прислать задачу на оценку",
+    },
     process: [
       {
         title: "Бриф",
@@ -324,46 +330,51 @@ export const workContent: Record<Locale, WorkCopy> = {
   en: {
     navAria: "KROFN commercial services",
     hero: {
-      headline: "I turn raw ideas into projects ready to present",
+      headline: "I build websites and web tools for businesses",
       subtext:
-        "Structure, visuals and a finished result: a deck, website or working tool.",
-      telegramCta: "Message on Telegram",
-      servicesCta: "See services",
+        "Landing pages, multi-page sites and targeted improvements. I work directly with clients or join agency and ad-specialist projects — from an existing design to launch.",
+      telegramCta: "Discuss a task",
+      projectsCta: "See work",
       panelAria: "Work quick facts",
       facts: [
         "Reply within a day",
-        "PPTX / PDF / website / source files",
-        "Brief → final",
-        "Revisions upfront",
+        "Landing / multi-page websites",
+        "From brief or existing design",
+        "Source code and handoff",
       ],
     },
     sections: {
       services: {
-        kicker: "01 / What I do",
+        kicker: "02 / What I do",
         title: "Services",
         intro:
-          "Choose the task format: from a presentation or website to visual packaging or a working tool.",
+          "From landing pages and improvements to small tools. Scope and outcome are agreed upfront.",
       },
       examples: {
-        kicker: "02 / Proof",
-        title: "Cases",
+        kicker: "01 / Selected work",
+        title: "Projects",
         intro:
-          "A few works where an idea became a clear page, system or tool.",
+          "Concepts and independent projects, with an explicit role and a verifiable deliverable.",
+      },
+      partners: {
+        kicker: "03 / Collaboration",
+        title: "For agencies and advertising specialists",
+        intro: "Bring an individual task, an existing design or a scoped development assignment.",
       },
       process: {
-        kicker: "03 / Process",
+        kicker: "04 / Process",
         title: "How the work goes",
         intro:
           "The path from a raw description to a result you can hand off and present.",
       },
       estimate: {
-        kicker: "04 / Budget",
+        kicker: "05 / Budget",
         title: "Estimate and budget",
         intro:
           "The estimate depends on scope, timing and how deeply the task needs to be shaped.",
       },
       contact: {
-        kicker: "05 / Contact",
+        kicker: "06 / Contact",
         title: "Start a project",
         intro:
           "Send a short description and I will help break down the task and next step.",
@@ -371,42 +382,31 @@ export const workContent: Record<Locale, WorkCopy> = {
     },
     labels: {
       task: "Focus",
-      built: "Built around",
-      result: "Shift",
+      built: "Implementation",
+      result: "Result",
+      role: "My role",
       output: "Output",
     },
     services: [
       {
-        title: "Presentations and visual packaging",
-        outcome:
-          "I help turn text and an idea into a clear deck for defense, sales or a talk.",
-        deliverables: [
-          "PPTX / PDF",
-          "structure and visual style",
-          "final ready-to-show version",
-        ],
+        title: "Websites and landing pages",
+        outcome: "Responsive pages for services, products and advertising campaigns.",
+        deliverables: ["structure and frontend", "mobile layouts", "deployment and source files"],
       },
       {
-        title: "Websites and web showcases",
-        outcome:
-          "I build a page that explains a project, person or service without unnecessary noise.",
-        deliverables: ["responsive page", "demo/deploy", "source files"],
-      },
-      {
-        title: "Design and presentation",
-        outcome:
-          "I bring materials into one visual language: from posters to cards and covers.",
-        deliverables: [
-          "layouts",
-          "exports for the needed format",
-          "visual system",
-        ],
+        title: "Website improvements",
+        outcome: "I join an existing project to solve a specific issue or add a feature.",
+        deliverables: ["UI fixes", "forms and inquiry flows", "integrations scoped in the brief"],
       },
       {
         title: "Tools and automation",
-        outcome:
-          "I make working scripts, CLI/TUI tools, plugins and mini-systems for a specific routine.",
-        deliverables: ["working tool", "run instructions", "source files"],
+        outcome: "Small web tools, scripts and workflow automation.",
+        deliverables: ["working tool", "tested flows", "instructions and code"],
+      },
+      {
+        title: "Design and presentations",
+        outcome: "Additional visual work: materials, decks and layouts for presenting ideas.",
+        deliverables: ["structure and visual direction", "layouts", "PPTX / PDF exports"],
       },
     ],
     servicesMore: {
@@ -418,44 +418,51 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "smart-otdelka",
         title: "Smart-Finishing",
-        task:
-          "A renovation landing page where the first screen explains the service, location and path to inquiry.",
-        built:
-          "A bold hero, service blocks, price calculator and direct Telegram handoff.",
-        result:
-          "The page became a guided route from first interest to contact, not just a static business card.",
-      },
-      {
-        id: "p2",
-        title: "IMGIFTED FEST",
-        task:
-          "A festival page that had to work as both an emotional poster and a practical schedule.",
-        built:
-          "Responsive structure, poster-like visual direction, competition-day grids and readable category blocks.",
-        result:
-          "Visitors can understand what is happening, when to come and where their category lives without instructions.",
+        status: "Concept demo · live preview",
+        role: "Page structure, interface, frontend and calculator.",
+        task: "A landing-page concept for renovation services with a clear inquiry path.",
+        built: "Responsive layout, service sections, calculator and Telegram contact link.",
+        result: "A working demo from service discovery to inquiry; conversion was not measured.",
       },
       {
         id: "p0",
         title: "Lak and Point",
-        task:
-          "A beauty landing page that sells the feeling of the service as much as the service itself.",
-        built:
-          "Oversized typography, animated first screen, price-list section and a fast booking handoff.",
-        result:
-          "The brand mood and practical details now sit in one clear, atmospheric web showcase.",
+        status: "Independent concept · source code",
+        role: "Visual system, motion and responsive frontend.",
+        task: "Beauty landing-page concept balancing visual identity with essential details.",
+        built: "Hero, animation, price-list section and booking flow.",
+        result: "A frontend concept; no commercial performance metrics claimed.",
       },
       {
-        id: "p5",
-        title: "BLOG.KROFN",
-        task:
-          "A personal blog that should feel like a media surface while staying practical for the author.",
-        built:
-          "A fullstack platform with an editor, SSR/SEO post pages, cover uploads and bilingual UI.",
-        result:
-          "The public side gained a proper editorial shell, while publishing stays simple enough for regular use.",
+        id: "p2",
+        title: "IMGIFTED FEST",
+        status: "Demonstration project · source code",
+        role: "Structure, editorial visual direction and responsive layout.",
+        task: "A poster-like event page with readable categories and schedule.",
+        built: "Day sections, category blocks and program navigation.",
+        result: "A demonstration interface for viewing the program across screen sizes.",
+      },
+      {
+        id: "p3",
+        title: "FINCROSS",
+        status: "Independent web project · source code",
+        role: "Interactive frontend and round-state logic.",
+        task: "A browser game with answer validation and round management.",
+        built: "Game interface, timer, answer checks and scoring.",
+        result: "A standalone interactive flow built with React and TypeScript.",
       },
     ],
+    partners: {
+      title: "I handle the technical execution",
+      text: "I work directly with clients or as part of your delivery process. Suitable for individual pages, targeted improvements or development from an existing design.",
+      bullets: [
+        "Share a brief, design or current website; we clarify scope.",
+        "Agree on deliverables, timing and acceptance before work starts.",
+        "Source code and handoff notes are included; added scope is quoted separately.",
+        "Communication model, NDA and white-label work are subject to agreement.",
+      ],
+      cta: "Send a task for estimation",
+    },
     process: [
       {
         title: "Brief",

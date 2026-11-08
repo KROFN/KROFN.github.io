@@ -17,7 +17,7 @@ const gatewayContent = {
       {
         title: "WORK",
         description:
-          "Рабочая витрина: презентации, сайты, дизайн и инструменты под конкретную задачу — от брифа до готового результата.",
+          "Сайты, лендинги и доработки для бизнеса. Разработка напрямую или в команде агентства.",
         button: "Заказать работу",
         href: "/work",
       },
@@ -39,7 +39,7 @@ const gatewayContent = {
       {
         title: "WORK",
         description:
-          "Commercial portfolio: presentations, websites, design and tools built around a specific task — from brief to finished result.",
+          "Websites, landing pages and improvements for businesses, delivered directly or with agency teams.",
         button: "Start a project",
         href: "/work",
       },

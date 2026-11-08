@@ -2,16 +2,9 @@ import type { Locale, PortfolioCopy, ProjectItem } from "../types/portfolio";
 
 export const projects: ProjectItem[] = [
   {
-    id: "p5",
-    image: "/img/blog-krofn.jpg",
-    demoUrl: "https://blogkrofnonline.vercel.app/",
-    repoUrl: "https://github.com/KROFN/blogkrofnonline",
-  },
-  {
-    id: "p1",
-    image: "/img/warm-frames.jpg",
-    demoUrl: "https://karataeva-site.vercel.app/",
-    repoUrl: "https://github.com/KROFN/karataeva-site",
+    id: "p3",
+    image: "/img/fincross.jpg",
+    repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
   },
   {
     id: "p0",
@@ -19,16 +12,14 @@ export const projects: ProjectItem[] = [
     repoUrl: "https://github.com/KROFN/lak-and-point",
   },
   {
-    id: "p3",
-    image: "/img/fincross.jpg",
-    demoUrl: "https://kraskovsky-crossword.vercel.app/",
-    repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
-  },
-  {
     id: "p2",
     image: "/img/imgifted-fest.jpg",
-    demoUrl: "https://imgifted-fest.vercel.app/",
     repoUrl: "https://github.com/KROFN/imgifted-fest",
+  },
+  {
+    id: "p1",
+    image: "/img/warm-frames.jpg",
+    repoUrl: "https://github.com/KROFN/karataeva-site",
   },
   {
     id: "p4",
@@ -67,14 +58,6 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
     projectIntro:
       "Выбранные запуски, в которых сочетаются визуальная подача, качество взаимодействия и реальная дисциплина shipping.",
     projects: {
-      p5: {
-        name: ["BLOG.KROFN"],
-        category: "Авторский блог-портфолио",
-        summary:
-          "Редакционный fullstack-сайт с публичным журналом и закрытой админкой: публикация заметок через TipTap-редактор, SSR/SEO-страницы постов, загрузка обложек и двуязычный интерфейс.",
-        tech: "Next.js · TypeScript · Tailwind · Supabase",
-        note: "Editorial publishing with private admin flows",
-      },
       p0: {
         name: ["ЛАК И ТОЧКА"],
         category: "Лендинг / Beauty-сервис",
@@ -274,14 +257,6 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
     projectIntro:
       "Selected launches that balance visual presence, interaction quality and practical shipping.",
     projects: {
-      p5: {
-        name: ["BLOG.KROFN"],
-        category: "Author blog portfolio",
-        summary:
-          "An editorial full-stack site with a public journal and a private admin area: publishing notes through a TipTap editor, SSR/SEO post pages, cover uploads, and a bilingual interface.",
-        tech: "Next.js · TypeScript · Tailwind · Supabase",
-        note: "Editorial publishing with private admin flows",
-      },
       p0: {
         name: ["LAK AND POINT"],
         category: "Landing / Beauty Service",
