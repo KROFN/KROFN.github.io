@@ -227,7 +227,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p3",
         title: "FINCROSS",
-        status: "Авторский веб-проект · исходники",
+        status: "Авторский веб-проект · онлайн-демо",
         role: "Интерактивный frontend и логика игрового сценария.",
         task: "Веб-игра с проверкой ответов и управлением состоянием раунда.",
         built: "Игровой интерфейс, таймер, проверка ответов и очки.",
@@ -445,7 +445,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p3",
         title: "FINCROSS",
-        status: "Independent web project · source code",
+        status: "Independent web project · live demo",
         role: "Interactive frontend and round-state logic.",
         task: "A browser game with answer validation and round management.",
         built: "Game interface, timer, answer checks and scoring.",

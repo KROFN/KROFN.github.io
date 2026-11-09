@@ -4,6 +4,7 @@ export const projects: ProjectItem[] = [
   {
     id: "p3",
     image: "/img/fincross.jpg",
+    demoUrl: "https://kraskovsky-crossword.vercel.app/",
     repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
   },
   {
