@@ -135,7 +135,7 @@ export default function FooterSection() {
         </div>
 
         <div className="footer-actions">
-          <MagneticLink href="https://t.me/krofn" label={copy.contact.telegramLabel}>
+          <MagneticLink href="https://t.me/krofn_dev" label={copy.contact.telegramLabel}>
             <TelegramIcon />
           </MagneticLink>
           <MagneticLink href="https://github.com/KROFN" label={copy.contact.githubLabel}>
