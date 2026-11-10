@@ -16,7 +16,7 @@ const pages = [
     file: "index.html",
     title: "KROFN — Creative & Work | Портфолио",
     description: "KROFN — разработка сайтов и веб-инструментов, авторские проекты и визуальные эксперименты. Выберите Work для сотрудничества или Creative для портфолио.",
-    image: "/img/fincross.jpg",
+    image: "/img/smart-otdelka.jpg",
   },
   {
     route: "/work/",
@@ -58,6 +58,7 @@ function injectMetadata(document, page) {
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,
+    `<meta name="twitter:image" content="${escapeAttribute(siteOrigin + page.image)}" />`,
   ];
   if (!html.includes("</head>")) throw new Error("Missing head in build");
   return html.replace("</head>", `    ${metadata.join("\n    ")}\n  </head>`);
