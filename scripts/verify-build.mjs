@@ -19,6 +19,8 @@ for (const route of routes) {
   assert.match(html, /<meta property="og:description" content="[^"]+"/);
   assert.ok(!html.includes("BLOG.KROFN"), "Removed project must not be present in HTML");
   if (route.path === "work/index.html") {
+    assert.ok(html.includes('<meta property="og:image" content="https://krofn.ru/img/krofn-og.jpg"'), "Work must use the dedicated KROFN social card");
+    assert.ok(html.includes('<meta name="twitter:image" content="https://krofn.ru/img/krofn-og.jpg"'), "Work Twitter card must use the dedicated KROFN social card");
     assert.ok(html.includes("разработка для агентств"), "Work-specific page title missing");
     assert.ok(html.includes("https://krofn.ru/mitta-test/"), "MITTA live demo missing from Work");
     assert.ok(html.includes("https://krofn.ru/sirius-test/"), "SIRIUS live demo missing from Work");

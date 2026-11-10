@@ -23,7 +23,7 @@ const pages = [
     file: "work/index.html",
     title: "KROFN Work — Сайты, лендинги и разработка для агентств",
     description: "Разработка лендингов и многостраничных сайтов, доработки и веб-инструменты. Работа напрямую с клиентами и в командах агентств. Кейсы, подход и контакт.",
-    image: "/img/smart-otdelka.jpg",
+    image: "/img/krofn-og.jpg",
   },
   {
     route: "/creative/",
