@@ -16,7 +16,7 @@ const pages = [
     file: "index.html",
     title: "KROFN — Creative & Work | Портфолио",
     description: "KROFN — разработка сайтов и веб-инструментов, авторские проекты и визуальные эксперименты. Выберите Work для сотрудничества или Creative для портфолио.",
-    image: "/img/smart-otdelka.jpg",
+    image: "/img/krofn-og.jpg",
   },
   {
     route: "/work/",
