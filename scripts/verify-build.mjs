@@ -16,6 +16,10 @@ for (const route of routes) {
   assert.ok(html.includes(`<meta property="og:url" content="${route.canonical}"`));
   assert.match(html, /<meta property="og:image" content="https:\/\/krofn\.ru\/img\/[^"]+"/);
   assert.match(html, /<meta name="description" content="[^"]+"/);
+  assert.ok(html.includes('href="/favicon.ico"'), "Missing ICO favicon on " + route.path);
+  assert.ok(html.includes('href="/favicon.svg?v=1"'), "Missing SVG favicon on " + route.path);
+  assert.ok(html.includes('href="/favicon-32x32.png"'), "Missing PNG favicon on " + route.path);
+  assert.ok(html.includes('href="/apple-touch-icon.png"'), "Missing Apple touch icon on " + route.path);
   assert.match(html, /<meta property="og:description" content="[^"]+"/);
   assert.ok(!html.includes("BLOG.KROFN"), "Removed project must not be present in HTML");
   if (route.path === "work/index.html") {
@@ -27,7 +31,11 @@ for (const route of routes) {
     assert.ok(html.includes("Инициативный концепт"), "MITTA/SIRIUS portfolio cases must stay labeled as initiative concepts");
   }
 }
+for (const icon of ["favicon.ico", "favicon.svg", "favicon-32x32.png", "apple-touch-icon.png"]) {
+  assert.ok((await stat(resolve(dir, icon))).size > 100, "Missing or empty " + icon);
+}
 const notFound = await readFile(resolve(dir, "404.html"), "utf8");
+assert.ok(notFound.includes('href="/favicon.svg?v=1"'), "404 page must include favicon");
 assert.match(notFound, /name="robots" content="noindex,nofollow"/);
 assert.ok(!notFound.includes('rel="canonical"'));
 const siteMap = await readFile(resolve(dir, "sitemap.xml"), "utf8");

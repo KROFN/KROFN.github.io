@@ -3,7 +3,11 @@ import { resolve, join } from "node:path";
 
 const dist = resolve("dist");
 const indexPath = join(dist, "index.html");
-const original = await readFile(indexPath, "utf8");
+// vite-plugin-singlefile rewrites public links as ./..., which breaks icons on /work/ and /creative/.
+const original = (await readFile(indexPath, "utf8")).replace(
+  /href="\.\/(favicon\.ico|favicon-32x32\.png|icon-192\.png|favicon\.svg\?v=1|apple-touch-icon\.png)"/g,
+  'href="/$1"',
+);
 const siteOrigin = (process.env.SITE_ORIGIN || "https://krofn.ru").replace(/\/+$/, "");
 const origin = new URL(siteOrigin);
 if (origin.protocol !== "https:" || origin.pathname !== "/") {
