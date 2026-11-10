@@ -209,7 +209,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p0",
         title: "Лак и Точка",
-        status: "Авторский концепт · исходники",
+        status: "Авторский концепт · онлайн-демо",
         role: "Визуальная система, анимация, адаптивный frontend.",
         task: "Прототип beauty-лендинга с сочетанием атмосферы и практичной информации.",
         built: "Главный экран, анимации, прайс-лист и сценарий записи.",
@@ -218,7 +218,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p2",
         title: "IMGIFTED FEST",
-        status: "Демонстрационная работа · исходники",
+        status: "Демонстрационная работа · онлайн-демо",
         role: "Структура, визуальная подача, адаптивная вёрстка.",
         task: "Страница мероприятия с афишной подачей и расписанием категорий.",
         built: "Секции дней, категорий выступлений и навигация по программе.",
@@ -427,7 +427,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p0",
         title: "Lak and Point",
-        status: "Independent concept · source code",
+        status: "Independent concept · live demo",
         role: "Visual system, motion and responsive frontend.",
         task: "Beauty landing-page concept balancing visual identity with essential details.",
         built: "Hero, animation, price-list section and booking flow.",
@@ -436,7 +436,7 @@ export const workContent: Record<Locale, WorkCopy> = {
       {
         id: "p2",
         title: "IMGIFTED FEST",
-        status: "Demonstration project · source code",
+        status: "Demonstration project · live demo",
         role: "Structure, editorial visual direction and responsive layout.",
         task: "A poster-like event page with readable categories and schedule.",
         built: "Day sections, category blocks and program navigation.",

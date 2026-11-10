@@ -10,16 +10,19 @@ export const projects: ProjectItem[] = [
   {
     id: "p0",
     image: "/img/lak-and-point.png",
+    demoUrl: "https://lak-and-point.vercel.app/",
     repoUrl: "https://github.com/KROFN/lak-and-point",
   },
   {
     id: "p2",
     image: "/img/imgifted-fest.jpg",
+    demoUrl: "https://imgifted-fest.vercel.app/",
     repoUrl: "https://github.com/KROFN/imgifted-fest",
   },
   {
     id: "p1",
     image: "/img/warm-frames.jpg",
+    demoUrl: "https://karataeva-site.vercel.app/",
     repoUrl: "https://github.com/KROFN/karataeva-site",
   },
   {
