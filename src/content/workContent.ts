@@ -2,7 +2,7 @@ import { projects } from "./creativeContent";
 import type { Locale, ProjectId, ProjectItem } from "../types/portfolio";
 
 export const contacts = {
-  telegram: "https://t.me/krofn",
+  telegram: "https://t.me/krofn_dev",
   github: "https://github.com/KROFN",
 };
 
