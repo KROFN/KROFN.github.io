@@ -20,6 +20,9 @@ for (const route of routes) {
   assert.ok(!html.includes("BLOG.KROFN"), "Removed project must not be present in HTML");
   if (route.path === "work/index.html") {
     assert.ok(html.includes("разработка для агентств"), "Work-specific page title missing");
+    assert.ok(html.includes("https://krofn.ru/mitta-test/"), "MITTA live demo missing from Work");
+    assert.ok(html.includes("https://krofn.ru/sirius-test/"), "SIRIUS live demo missing from Work");
+    assert.ok(html.includes("Инициативный концепт"), "MITTA/SIRIUS portfolio cases must stay labeled as initiative concepts");
   }
 }
 const notFound = await readFile(resolve(dir, "404.html"), "utf8");
