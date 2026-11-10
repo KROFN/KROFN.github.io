@@ -18,13 +18,25 @@ interface WorkServiceMoreCopy {
   cta: string;
 }
 
-type WorkProjectId = ProjectId | "smart-otdelka";
+type WorkProjectId = ProjectId | "mitta" | "sirius" | "smart-otdelka";
 
 type WorkProjectItem = Omit<ProjectItem, "id"> & {
   id: WorkProjectId;
 };
 
 const workProjects: WorkProjectItem[] = [
+  {
+    id: "mitta",
+    image: "/img/mitta.jpg",
+    demoUrl: "https://krofn.ru/mitta-test/",
+    repoUrl: "https://github.com/KROFN/mitta-test",
+  },
+  {
+    id: "sirius",
+    image: "/img/sirius.jpg",
+    demoUrl: "https://krofn.ru/sirius-test/",
+    repoUrl: "https://github.com/KROFN/sirius-test",
+  },
   {
     id: "smart-otdelka",
     image: "/img/smart-otdelka.jpg",
@@ -197,6 +209,24 @@ export const workContent: Record<Locale, WorkCopy> = {
       cta: "Обсудить проект",
     },
     examples: [
+      {
+        id: "mitta",
+        title: "МИТТА",
+        status: "Инициативный концепт · онлайн-демо",
+        role: "Исследование структуры, UX/UI, frontend и многостраничный каталог.",
+        task: "Предпродажный концепт онлайн-витрины для регионального мебельного магазина с большим физическим шоурумом.",
+        built: "Главная, каталог по категориям, карточки товаров, страницы магазина, доставки и контактов, адаптив и прямые сценарии связи.",
+        result: "Рабочее многостраничное демо с навигацией по ассортименту и демонстрационной публикацией, закрытой от индексации.",
+      },
+      {
+        id: "sirius",
+        title: "SIRIUS",
+        status: "Инициативный концепт · онлайн-демо",
+        role: "Структура, арт-дирекшн, UI и адаптивный frontend.",
+        task: "Концепт сайта фотостудии с двумя основными сценариями: аренда пространства и съёмка под ключ.",
+        built: "Лендинг с ценами, услугами, портфолио, responsive-изображениями и быстрыми сценариями записи через WhatsApp / VK.",
+        result: "Полностью опубликованное desktop/mobile демо, подготовленное для финальной актуализации контента и запуска.",
+      },
       {
         id: "smart-otdelka",
         title: "Смарт-Отделка",
@@ -415,6 +445,24 @@ export const workContent: Record<Locale, WorkCopy> = {
       cta: "Discuss project",
     },
     examples: [
+      {
+        id: "mitta",
+        title: "MITTA",
+        status: "Initiative concept · live demo",
+        role: "Information architecture, UX/UI, frontend and multi-page catalog.",
+        task: "A pre-sale online storefront concept for a regional furniture retailer with a large physical showroom.",
+        built: "Homepage, category catalog, product pages, store, delivery and contact pages, responsive layouts and direct inquiry flows.",
+        result: "A working multi-page demo with product discovery and a non-indexed demonstration deployment.",
+      },
+      {
+        id: "sirius",
+        title: "SIRIUS",
+        status: "Initiative concept · live demo",
+        role: "Structure, art direction, UI and responsive frontend.",
+        task: "A photography-studio website concept built around two primary journeys: studio rental and a full photo-session service.",
+        built: "Landing page with pricing, services, portfolio, responsive imagery and fast WhatsApp / VK contact flows.",
+        result: "A fully published desktop/mobile demo prepared for final content refresh and launch.",
+      },
       {
         id: "smart-otdelka",
         title: "Smart-Finishing",
