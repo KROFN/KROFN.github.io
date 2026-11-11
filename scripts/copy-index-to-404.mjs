@@ -18,12 +18,14 @@ const pages = [
   {
     route: "/",
     file: "index.html",
-    title: "KROFN — Creative & Work | Портфолио",
-    description: "KROFN — разработка сайтов и веб-инструментов, авторские проекты и визуальные эксперименты. Выберите Work для сотрудничества или Creative для портфолио.",
-    image: "/img/krofn-og.jpg",
+    title: "KROFN — Фронтенд-разработка на субподряд | Сергей Красковский",
+    description: "KROFN — адаптивная вёрстка и React/TypeScript-разработка для веб-студий. Кейсы, формат субподряда и прямой контакт с разработчиком.",
+    image: "/img/krofn-manual-og.jpg",
+    theme: "#f1ede5",
   },
   {
     route: "/work/",
+    theme: "#080B12",
     file: "work/index.html",
     title: "KROFN Work — Сайты, лендинги и разработка для агентств",
     description: "Разработка лендингов и многостраничных сайтов, доработки и веб-инструменты. Работа напрямую с клиентами и в командах агентств. Кейсы, подход и контакт.",
@@ -31,6 +33,7 @@ const pages = [
   },
   {
     route: "/creative/",
+    theme: "#080B12",
     file: "creative/index.html",
     title: "KROFN Creative — Интерфейсы, проекты и эксперименты",
     description: "Авторское портфолио KROFN: интерактивные интерфейсы, визуальные веб-проекты, разработка и инженерные эксперименты.",
@@ -47,6 +50,7 @@ function injectMetadata(document, page) {
   const title = escapeAttribute(page.title);
   const description = escapeAttribute(page.description);
   let html = document.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`);
+  html = html.replace(/<meta name="theme-color" content="[^"]+"\s*\/>/, `<meta name="theme-color" content="${page.theme}" />`);
   const descriptionRE = /<meta\s+name="description"\s+content="[^"]*"\s*\/>/;
   if (!descriptionRE.test(html)) throw new Error("Missing template description meta");
   html = html.replace(descriptionRE, `<meta name="description" content="${description}" />`);

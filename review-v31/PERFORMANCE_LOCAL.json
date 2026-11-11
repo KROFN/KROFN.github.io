@@ -1,0 +1,27 @@
+{
+  "environment": "Chromium localhost, warm machine, no artificial network/CPU throttling; not a production Lighthouse score",
+  "report": [
+    {
+      "width": 1440,
+      "domContentLoaded": 223,
+      "load": 578,
+      "fcp": 340,
+      "lcp": 476,
+      "cls": 0.0032,
+      "resourceCount": 11,
+      "bytesReported": 188427,
+      "manualMediaRequests": 8
+    },
+    {
+      "width": 390,
+      "domContentLoaded": 216,
+      "load": 520,
+      "fcp": 252,
+      "lcp": 340,
+      "cls": 0.0075,
+      "resourceCount": 11,
+      "bytesReported": 188427,
+      "manualMediaRequests": 8
+    }
+  ]
+}

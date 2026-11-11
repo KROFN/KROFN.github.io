@@ -1,0 +1,60 @@
+{
+  "design": "Fidelity V3.1 approved 2026-11-11",
+  "capture": "1600x900 CSS pixels, deviceScaleFactor=2, Chromium headless",
+  "captured_on": "2026-11-11",
+  "laniakea": {
+    "origin": "/srv/node2-agent/workspace/laniakea-site-v1/index.html",
+    "source_index_sha256": "b1cc8f6c65db9e602e80854fd619d16209426b71d763fa5dbd633e025e7e02fb",
+    "capture_sha256": "0643c1ffd2abb949579f86f4c87d5220ef96b7edd9407c963767385126167d32",
+    "live_status": "not verified"
+  },
+  "karataeva": {
+    "origin": "https://github.com/KROFN/karataeva-site",
+    "source_commit": "b26af6fb8c60a64ac6b65678a823f581b8ddaca5",
+    "capture_sha256": "21e51366985ebd0bc6eaaf9bbc2dda6e1e75cbfa413369e3e9d7372870d6abe5",
+    "live_status": "not verified"
+  },
+  "variants": [
+    {
+      "file": "karataeva-1600-58a579d0c5.webp",
+      "sha256": "58a579d0c56501332b220c8ff6fb6ecdbe363f6d53fd27226c904d0dfc6de3c7",
+      "bytes": 40118
+    },
+    {
+      "file": "karataeva-2400-d10e27eb4a.webp",
+      "sha256": "d10e27eb4a5d1c2bdc7f1bbd69ae53a8e57e82ee700c11d856cf00d6baae7f77",
+      "bytes": 74518
+    },
+    {
+      "file": "karataeva-3200-2e5c7c61fe.webp",
+      "sha256": "2e5c7c61fe8720c42a4f37e17e7ca148d56333face6ba4b046009696a2c52324",
+      "bytes": 108588
+    },
+    {
+      "file": "karataeva-960-b5e7bf958e.webp",
+      "sha256": "b5e7bf958ef3ae2e665da487afb261f63ab7c325643e654d5cc18be15727c32f",
+      "bytes": 18974
+    },
+    {
+      "file": "laniakea-1600-3f76b82322.webp",
+      "sha256": "3f76b82322cd58e62e365dc41a3920993cd79682af3d4f003c3686410c79b30e",
+      "bytes": 99240
+    },
+    {
+      "file": "laniakea-2400-b4cda4d4a8.webp",
+      "sha256": "b4cda4d4a83a48110ffb471fa70db5a709d479babd32f131149b2c66166d02b7",
+      "bytes": 159682
+    },
+    {
+      "file": "laniakea-3200-1b7550238d.webp",
+      "sha256": "1b7550238df110160aa8ba8cbeb8ff41fa7476f49644972f0fd9a30ef63117de",
+      "bytes": 222188
+    },
+    {
+      "file": "laniakea-960-040d6de810.webp",
+      "sha256": "040d6de8102b837527d48ea663bf0894f88e137cbd9e22a66cb66727984e0b16",
+      "bytes": 51444
+    }
+  ],
+  "note": "Screenshots are unretouched actual browser renders of local source implementations. Responsive re-encoding only; no AI generation or commercial status claims."
+}

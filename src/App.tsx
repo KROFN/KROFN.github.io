@@ -9,12 +9,11 @@ import SiteNav from "./components/shared/SiteNav";
 import { LangProvider, useLang } from "./context/LangContext";
 import { useEnvironmentFlags } from "./hooks/useEnvironmentFlags";
 import CreativeSite from "./sites/creative/CreativeSite";
-import GatewaySite from "./sites/gateway/GatewaySite";
+import ManualSite from "./sites/manual/ManualSite";
 import WorkSite from "./sites/work/WorkSite";
 
-gsap.registerPlugin(ScrollTrigger);
-
-type RouteKey = "gateway" | "creative" | "work" | "unknown";
+type LegacyRoute = "creative" | "work" | "unknown";
+type RouteKey = "manual" | LegacyRoute;
 
 const ROUTE_IMAGE_WAIT_LIMIT = 7000;
 
@@ -22,7 +21,7 @@ function getRoute(pathname: string): RouteKey {
   const normalized = pathname.replace(/\/+$/, "") || "/";
 
   if (normalized === "/") {
-    return "gateway";
+    return "manual";
   }
 
   if (normalized === "/creative") {
@@ -127,7 +126,7 @@ function NotFoundSite() {
   );
 }
 
-function renderRoute(route: RouteKey): ReactNode {
+function renderRoute(route: LegacyRoute): ReactNode {
   if (route === "creative") {
     return <CreativeSite />;
   }
@@ -140,10 +139,10 @@ function renderRoute(route: RouteKey): ReactNode {
     return <NotFoundSite />;
   }
 
-  return <GatewaySite />;
+  return <NotFoundSite />;
 }
 
-function useRouteImageLoad(route: RouteKey) {
+function useRouteImageLoad(route: LegacyRoute) {
   const [assetProgress, setAssetProgress] = useState(0);
   const [assetsReady, setAssetsReady] = useState(false);
 
@@ -226,20 +225,19 @@ function useRouteImageLoad(route: RouteKey) {
   return { assetProgress, assetsReady };
 }
 
-function PortfolioShell() {
-  const [readyRoute, setReadyRoute] = useState<RouteKey | null>(null);
-  const pathname = usePathname();
-  const route = useMemo(() => getRoute(pathname), [pathname]);
-  const { copy } = useLang();
+function PortfolioShell({ route }: { route: LegacyRoute }) {
+  // Legacy animation stack is activated only when an old route is mounted.
+  useEffect(() => { gsap.registerPlugin(ScrollTrigger); }, []);
+  const [readyRoute, setReadyRoute] = useState<LegacyRoute | null>(null);
+  const { copy, lang } = useLang();
   const { canHover, reducedMotion } = useEnvironmentFlags();
   const { assetProgress, assetsReady } = useRouteImageLoad(route);
   const isReady = readyRoute === route;
   const handleLoaderDone = useCallback(() => setReadyRoute(route), [route]);
 
-  useInternalNavigation();
-
   useEffect(() => {
     document.body.dataset.route = route;
+    document.documentElement.lang = lang === "ru" ? "ru" : "en";
 
     if (window.location.hash) {
       const target = document.querySelector(window.location.hash);
@@ -256,7 +254,7 @@ function PortfolioShell() {
 
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     window.setTimeout(() => ScrollTrigger.refresh(), 80);
-  }, [route]);
+  }, [route, lang]);
 
   useEffect(() => {
     if (!(canHover && !reducedMotion)) {
@@ -331,10 +329,18 @@ function PortfolioShell() {
   );
 }
 
+/** Root route is a self-contained approved visual document, not the legacy shell. */
+function RouteShell() {
+  const pathname = usePathname();
+  const route = useMemo(() => getRoute(pathname), [pathname]);
+  useInternalNavigation();
+  return route === "manual" ? <ManualSite /> : <PortfolioShell route={route} />;
+}
+
 export default function App() {
   return (
     <LangProvider>
-      <PortfolioShell />
+      <RouteShell />
     </LangProvider>
   );
 }

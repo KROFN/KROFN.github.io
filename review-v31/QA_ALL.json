@@ -1,0 +1,607 @@
+{
+  "states": [
+    {
+      "width": 1440,
+      "case": 0,
+      "scrollWidth": 1440,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "case": 1,
+      "scrollWidth": 1440,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 1160,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-1600-3f76b82322.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1440,
+      "case": 2,
+      "scrollWidth": 1440,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 1160,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-1600-58a579d0c5.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 390,
+      "case": 0,
+      "scrollWidth": 390,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 118,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 74,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 390,
+      "case": 1,
+      "scrollWidth": 390,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 389,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 118,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 74,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-960-040d6de810.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 390,
+      "case": 2,
+      "scrollWidth": 390,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 389,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 118,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 74,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-960-b5e7bf958e.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 320,
+      "case": 0,
+      "scrollWidth": 320,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 97,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 63,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 320,
+      "case": 1,
+      "scrollWidth": 320,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 320,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 97,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 63,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-960-040d6de810.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 320,
+      "case": 2,
+      "scrollWidth": 320,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 320,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 97,
+          "h": 46
+        },
+        "arrow": {
+          "w": 54,
+          "h": 48
+        },
+        "foot": {
+          "w": 63,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-960-b5e7bf958e.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 768,
+      "case": 0,
+      "scrollWidth": 768,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 86,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 46
+        },
+        "foot": {
+          "w": 58,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 768,
+      "case": 1,
+      "scrollWidth": 768,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 660,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 86,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 46
+        },
+        "foot": {
+          "w": 58,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-960-040d6de810.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 768,
+      "case": 2,
+      "scrollWidth": 768,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 660,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 86,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 46
+        },
+        "foot": {
+          "w": 58,
+          "h": 46
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-960-b5e7bf958e.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "case": 0,
+      "scrollWidth": 1024,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 110,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "case": 1,
+      "scrollWidth": 1024,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 880,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 110,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-960-040d6de810.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1024,
+      "case": 2,
+      "scrollWidth": 1024,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 880,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 110,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-960-b5e7bf958e.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1920,
+      "case": 0,
+      "scrollWidth": 1920,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "SIRIUS",
+      "mediaLoaded": true,
+      "imageWidth": 1382,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/assets/sirius-art-clean.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1920,
+      "case": 1,
+      "scrollWidth": 1920,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Ланиакея",
+      "mediaLoaded": true,
+      "imageWidth": 1160,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/laniakea-1600-3f76b82322.webp",
+      "errors": [],
+      "broken": []
+    },
+    {
+      "width": 1920,
+      "case": 2,
+      "scrollWidth": 1920,
+      "route": "manual",
+      "htmlLang": "ru",
+      "modal": true,
+      "title": "Karataeva",
+      "mediaLoaded": true,
+      "imageWidth": 1160,
+      "oldNav": false,
+      "oldCursor": false,
+      "bodyBefore": "none",
+      "hits": {
+        "nav": {
+          "w": 160,
+          "h": 46
+        },
+        "arrow": {
+          "w": 44,
+          "h": 39
+        },
+        "foot": {
+          "w": 58,
+          "h": 16
+        }
+      },
+      "text": "Забираю вёрстку и фронтенд у веб-студий на субподряд",
+      "imageSrc": "http://127.0.0.1:48932/media/manual/projects/karataeva-1600-58a579d0c5.webp",
+      "errors": [],
+      "broken": []
+    }
+  ],
+  "legacy": [
+    {
+      "route": "/work/",
+      "lang": "en",
+      "oldNav": 1,
+      "manual": 0,
+      "title": "KROFN Work — Сайты, лендинги и разработка для агентств",
+      "errors": []
+    },
+    {
+      "route": "/creative/",
+      "lang": "en",
+      "oldNav": 1,
+      "manual": 0,
+      "title": "KROFN Creative — Интерфейсы, проекты и эксперименты",
+      "errors": []
+    },
+    {
+      "route": "/nonexistent-route",
+      "lang": "en",
+      "oldNav": 1,
+      "manual": 0,
+      "title": "KROFN — Страница не найдена",
+      "errors": []
+    }
+  ],
+  "failed": []
+}

@@ -22,6 +22,11 @@ for (const route of routes) {
   assert.ok(html.includes('href="/apple-touch-icon.png"'), "Missing Apple touch icon on " + route.path);
   assert.match(html, /<meta property="og:description" content="[^"]+"/);
   assert.ok(!html.includes("BLOG.KROFN"), "Removed project must not be present in HTML");
+  if (route.path === "index.html") {
+    assert.ok(html.includes("Фронтенд-разработка на субподряд"), "Manual home title missing");
+    assert.ok(html.includes('https://krofn.ru/img/krofn-manual-og.jpg'), "Manual OG image missing");
+    assert.ok(html.includes('name="theme-color" content="#f1ede5"'), "Manual theme color missing");
+  }
   if (route.path === "work/index.html") {
     assert.ok(html.includes('<meta property="og:image" content="https://krofn.ru/img/krofn-og.jpg"'), "Work must use the dedicated KROFN social card");
     assert.ok(html.includes('<meta name="twitter:image" content="https://krofn.ru/img/krofn-og.jpg"'), "Work Twitter card must use the dedicated KROFN social card");
@@ -43,4 +48,5 @@ for (const route of routes) assert.ok(siteMap.includes(route.canonical));
 assert.ok((await stat(resolve(dir, "img/smart-otdelka.jpg"))).size > 1000);
 assert.ok((await stat(resolve(dir, "img/fincross.jpg"))).size > 1000);
 await assert.rejects(stat(resolve(dir, "img/blog-krofn.jpg")), { code: "ENOENT" });
-console.log("PASS: 3 route pages + 404, canonical, OG, sitemap, image assets, removed BLOG.KROFN");
+assert.ok((await stat(resolve(dir, "img/krofn-manual-og.jpg"))).size > 1000);
+console.log("PASS: manual home, legacy routes, 404, canonical, OG, sitemap, image assets, removed BLOG.KROFN");
