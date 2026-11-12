@@ -7,38 +7,43 @@ export default function ManualCollaboration() {
         <span className="rail-end">КАК НАЧАТЬ РАБОТУ</span>
       </div>
 
-      <div className="collab-body shell">
-        <div className="collab-main">
+      <div className="collab-workorder shell">
+        <header className="collab-workorder-head">
           <span className="collab-kicker">НЕ ОБЯЗАТЕЛЬНО ОТДАВАТЬ ВЕСЬ ПРОЕКТ</span>
-          <h2 id="collab-title">Можно начать<br />с одной задачи.</h2>
+          <h2 id="collab-title">Можно начать<br />с одного экрана.</h2>
           <p>
-            Подключусь к готовому макету, существующему сайту или отдельному участку продукта.
-            Сначала фиксируем результат и границы работы — потом разработка.
+            Готовый макет, существующий сайт или отдельная задача — нормальная точка входа.
+            До разработки фиксируем, что именно должно получиться.
           </p>
+        </header>
+
+        <div className="collab-process">
+          <div className="collab-process-step">
+            <span>01 / ВХОД</span>
+            <strong>Что передаёшь</strong>
+            <p>Макет, текущий сайт или конкретный участок продукта.</p>
+          </div>
+          <div className="collab-process-step">
+            <span>02 / ГРАНИЦЫ</span>
+            <strong>Что фиксируем</strong>
+            <p>Объём, результат и этапы до начала разработки.</p>
+          </div>
+          <div className="collab-process-step">
+            <span>03 / ПЕРЕДАЧА</span>
+            <strong>Что получаешь</strong>
+            <p>Исходный код и необходимые инструкции по проекту.</p>
+          </div>
         </div>
 
-        <div className="collab-side">
-          <div className="offer-lines">
-            <div>
-              <span className="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" /></svg></span>
-              <span>Подключаюсь к готовому макету или существующему сайту</span>
-            </div>
-            <div>
-              <span className="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" /></svg></span>
-              <span>Согласуем объём, результат и этапы до начала разработки</span>
-            </div>
-            <div>
-              <span className="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" /></svg></span>
-              <span>Передаю исходный код и необходимые инструкции</span>
-            </div>
+        <div className="collab-workorder-cta">
+          <div>
+            <span>ПРЯМАЯ СВЯЗЬ / БЕЗ ФОРМЫ НА 20 ПОЛЕЙ</span>
+            <strong>Опиши задачу как есть.</strong>
           </div>
-
-          <div className="collab-cta">
-            <span className="collab-cta-label">ПРЯМАЯ СВЯЗЬ / БЕЗ ФОРМЫ И БРИФА НА 20 ПОЛЕЙ</span>
-            <a className="button final-button" href="https://t.me/krofn_dev" rel="noreferrer" target="_blank">
-              Написать в Telegram <span>↗</span>
-            </a>
-          </div>
+          <a href="https://t.me/krofn_dev" rel="noreferrer" target="_blank">
+            <span>Написать в Telegram</span>
+            <b>↗</b>
+          </a>
         </div>
       </div>
 

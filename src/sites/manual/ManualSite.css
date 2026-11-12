@@ -1169,3 +1169,518 @@ body[data-route="manual"]{background:var(--paper)!important}
 @media(max-width:520px){
   .manual-root .scene-collab .collab-cta{padding:14px}
 }
+
+
+/* ==========================================================================
+   V3.5 — DOSSIER / WORK ORDER
+   Strong authored hierarchy without decorative noise or scroll capture.
+   ========================================================================== */
+
+.manual-root .scene-cases{
+  position:relative;
+  overflow:hidden;
+  padding-bottom:38px;
+  background:
+    linear-gradient(180deg,rgba(89,69,49,.025),transparent 24%,rgba(255,255,255,.08) 78%,rgba(89,69,49,.025)),
+    url('/media/manual/assets/paper.webp'),
+    #e9e3d9;
+}
+.manual-root .scene-cases .section-rail{
+  position:relative;
+  z-index:3;
+}
+.manual-root .case-stage-nav{
+  position:relative;
+  z-index:3;
+  min-height:62px;
+  grid-template-columns:160px 1fr auto;
+  background:rgba(233,227,217,.88);
+  backdrop-filter:blur(8px);
+  border-top:0;
+}
+.manual-root .case-stage-nav .case-pages{
+  justify-content:flex-start;
+}
+.manual-root .case-stage-nav .page-case{
+  min-height:44px;
+  padding:10px 24px;
+  background:transparent;
+  font-weight:700;
+}
+.manual-root .case-stage-nav .page-case.active::after{
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:4px;
+}
+.manual-root .case-progress>i>b{background:var(--red)}
+
+.manual-root .case-dossier{
+  position:relative;
+  z-index:2;
+  padding-top:34px;
+  padding-bottom:28px;
+  animation:manual-case-in .28s ease-out both;
+}
+.manual-root .case-dossier-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(420px,.75fr);
+  gap:clamp(28px,4vw,72px);
+  align-items:end;
+  padding-bottom:24px;
+  border-bottom:1px solid rgba(48,45,41,.56);
+}
+.manual-root .case-dossier-title .eyebrow{
+  display:block;
+  margin-bottom:8px;
+  color:#756e65;
+  font:600 9px/1.2 'Roboto Mono',monospace;
+  letter-spacing:.12em;
+}
+.manual-root .case-dossier-title h2{
+  margin:0;
+  color:var(--ink);
+  font-family:Inter,Arial,sans-serif;
+  font-size:clamp(72px,7.2vw,132px);
+  font-weight:900;
+  line-height:.82;
+  letter-spacing:-.085em;
+  white-space:nowrap;
+}
+.manual-root .case-dossier-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid rgba(49,46,42,.45);
+  border-bottom:1px solid rgba(49,46,42,.45);
+}
+.manual-root .case-dossier-meta>div{
+  min-width:0;
+  min-height:75px;
+  padding:12px 12px 10px;
+  border-right:1px solid rgba(49,46,42,.28);
+}
+.manual-root .case-dossier-meta>div:first-child{padding-left:0}
+.manual-root .case-dossier-meta>div:last-child{border-right:0;padding-right:0}
+.manual-root .case-dossier-meta span{
+  display:block;
+  margin-bottom:8px;
+  color:#777067;
+  font:600 8px/1 'Roboto Mono',monospace;
+  letter-spacing:.1em;
+}
+.manual-root .case-dossier-meta strong{
+  display:block;
+  font:600 12px/1.32 Inter,Arial,sans-serif;
+}
+
+.manual-root .case-dossier-stage{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  align-items:stretch;
+  margin-top:24px;
+  border:1px solid #4b4843;
+  background:#2a2927;
+  box-shadow:0 15px 38px rgba(41,34,28,.12);
+}
+.manual-root .case-dossier-media{
+  min-width:0;
+  background:#d7d1c8;
+  border-right:1px solid #4b4843;
+}
+.manual-root .project-bar{
+  min-height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:0 12px;
+  color:#3f3c37;
+  background:#d9d3ca;
+  border-bottom:1px solid #4b4843;
+  font:600 9px/1 'Roboto Mono',monospace;
+  letter-spacing:.08em;
+}
+.manual-root .case-dossier-media .project-viewport{
+  aspect-ratio:16/9;
+  min-height:0;
+  max-height:none;
+  border:0;
+}
+.manual-root .project-bar-bottom{
+  border-top:1px solid #4b4843;
+  border-bottom:0;
+}
+.manual-root .project-bar-bottom button{
+  min-height:34px;
+  border:0;
+  padding:0;
+  background:transparent;
+  color:inherit;
+  font:700 9px/1 'Roboto Mono',monospace;
+  cursor:pointer;
+}
+.manual-root .project-bar-bottom button:hover{color:var(--red)}
+
+.manual-root .case-dossier-rail{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  background:#292826;
+  color:#eee9df;
+}
+.manual-root .case-dossier-status{
+  padding:18px 18px 16px;
+  border-bottom:1px solid rgba(241,237,229,.22);
+}
+.manual-root .case-dossier-status span{
+  display:block;
+  margin-bottom:8px;
+  color:#d46a60;
+  font:700 8px/1.25 'Roboto Mono',monospace;
+  letter-spacing:.1em;
+}
+.manual-root .case-dossier-status strong{
+  display:block;
+  font:700 12px/1.35 'Roboto Mono',monospace;
+}
+.manual-root .case-dossier-analysis{
+  padding:19px 18px 0;
+}
+.manual-root .case-dossier-label{
+  display:block;
+  margin-bottom:10px;
+  color:#aaa299;
+  font:700 8px/1 'Roboto Mono',monospace;
+  letter-spacing:.1em;
+}
+.manual-root .case-dossier-line{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:10px;
+  align-items:start;
+  padding:11px 0;
+  border-top:1px solid rgba(241,237,229,.14);
+  color:#eee9df;
+  font-size:12px;
+  line-height:1.35;
+}
+.manual-root .case-dossier-line .check{
+  color:#eee9df;
+  border-color:#8f887f;
+}
+.manual-root .case-dossier-line .check svg path{stroke:#d45d52}
+.manual-root .case-dossier-note{
+  margin-top:auto;
+  padding:16px 18px 18px;
+  border-top:1px solid rgba(241,237,229,.22);
+}
+.manual-root .case-dossier-note b{
+  display:block;
+  margin-bottom:7px;
+  color:#d46a60;
+  font:700 9px/1.2 'Roboto Mono',monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.manual-root .case-dossier-note p{
+  margin:0;
+  color:#bbb4aa;
+  font-size:11px;
+  line-height:1.45;
+}
+
+.manual-root .case-dossier-foot{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(20px,3vw,50px);
+  align-items:start;
+  padding-top:18px;
+}
+.manual-root .case-dossier-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.manual-root .case-dossier-actions .button{
+  min-width:190px;
+  min-height:48px;
+  padding:9px 14px;
+  font-size:12px;
+}
+.manual-root .case-dossier-footnote{
+  min-width:0;
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:14px;
+  padding-top:8px;
+  border-top:1px solid rgba(49,46,42,.35);
+}
+.manual-root .case-dossier-footnote>span{
+  color:var(--red);
+  font:700 9px/1.2 'Roboto Mono',monospace;
+  letter-spacing:.08em;
+}
+.manual-root .case-dossier-footnote p{
+  max-width:760px;
+  margin:0;
+  color:#6b645c;
+  font-size:10px;
+  line-height:1.45;
+}
+
+/* The image itself is allowed to define the personality of each case. */
+.manual-root .case-dossier-sirius .case-dossier-title h2{letter-spacing:-.095em}
+.manual-root .case-dossier-laniakea .case-dossier-title h2{letter-spacing:-.075em}
+.manual-root .case-dossier-karataeva .case-dossier-title h2{letter-spacing:-.09em}
+
+/* §03 — work order, not a generic checklist block. */
+.manual-root .scene-collab{
+  background:
+    linear-gradient(120deg,rgba(255,255,255,.15),transparent 46%,rgba(117,88,62,.035)),
+    url('/media/manual/assets/paper.webp'),
+    #eee8de;
+}
+.manual-root .collab-workorder{
+  padding-top:58px;
+  padding-bottom:50px;
+}
+.manual-root .collab-workorder-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(330px,.72fr);
+  column-gap:clamp(38px,5vw,88px);
+  align-items:end;
+  padding-bottom:36px;
+  border-bottom:1px solid rgba(43,40,37,.52);
+}
+.manual-root .collab-workorder-head .collab-kicker{
+  grid-column:1;
+  display:block;
+  margin-bottom:14px;
+  color:#9c332d;
+  font:700 9px/1.2 'Roboto Mono',monospace;
+  letter-spacing:.11em;
+}
+.manual-root .collab-workorder-head h2{
+  grid-column:1;
+  margin:0;
+  color:var(--ink);
+  font:900 clamp(64px,6.6vw,122px)/.84 Inter,Arial,sans-serif;
+  letter-spacing:-.09em;
+}
+.manual-root .collab-workorder-head p{
+  grid-column:2;
+  grid-row:1/3;
+  max-width:500px;
+  margin:0 0 5px;
+  color:#5c554d;
+  font-size:17px;
+  line-height:1.55;
+}
+.manual-root .collab-process{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  border-bottom:1px solid rgba(43,40,37,.52);
+}
+.manual-root .collab-process-step{
+  min-height:205px;
+  padding:24px 26px 24px 0;
+  border-right:1px solid rgba(43,40,37,.33);
+}
+.manual-root .collab-process-step + .collab-process-step{padding-left:26px}
+.manual-root .collab-process-step:last-child{
+  border-right:0;
+  padding-right:0;
+}
+.manual-root .collab-process-step>span{
+  display:block;
+  margin-bottom:36px;
+  color:var(--red);
+  font:700 9px/1 'Roboto Mono',monospace;
+  letter-spacing:.11em;
+}
+.manual-root .collab-process-step strong{
+  display:block;
+  margin-bottom:12px;
+  font-size:21px;
+  line-height:1.15;
+}
+.manual-root .collab-process-step p{
+  max-width:360px;
+  margin:0;
+  color:#655e56;
+  font-size:14px;
+  line-height:1.5;
+}
+.manual-root .collab-workorder-cta{
+  display:grid;
+  grid-template-columns:1fr minmax(380px,.52fr);
+  align-items:stretch;
+  margin-top:26px;
+  background:#292826;
+  color:#f1ede5;
+  border-left:5px solid var(--red);
+}
+.manual-root .collab-workorder-cta>div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:23px 28px;
+}
+.manual-root .collab-workorder-cta>div span{
+  margin-bottom:7px;
+  color:#d66b61;
+  font:700 8px/1.2 'Roboto Mono',monospace;
+  letter-spacing:.11em;
+}
+.manual-root .collab-workorder-cta>div strong{
+  font-size:clamp(21px,2vw,34px);
+  line-height:1.08;
+}
+.manual-root .collab-workorder-cta>a{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  background:#f1ede5;
+  color:#242321;
+  border:12px solid #292826;
+  border-left:0;
+  font-size:16px;
+  font-weight:800;
+}
+.manual-root .collab-workorder-cta>a b{font-size:24px}
+.manual-root .collab-workorder-cta>a:hover{background:#fff}
+
+/* Preserve free scrolling. */
+.manual-root .scene-cases{height:auto!important}
+.manual-root .case-stage-sticky{display:contents!important}
+
+@media(max-width:1100px){
+  .manual-root .case-dossier-head{
+    grid-template-columns:minmax(0,1fr) minmax(350px,.8fr);
+  }
+  .manual-root .case-dossier-stage{
+    grid-template-columns:minmax(0,1fr) 280px;
+  }
+  .manual-root .case-dossier-title h2{
+    font-size:clamp(64px,7vw,100px);
+  }
+  .manual-root .collab-workorder-head h2{
+    font-size:clamp(58px,6.4vw,92px);
+  }
+}
+
+@media(max-width:900px){
+  .manual-root .case-stage-nav{
+    grid-template-columns:1fr auto;
+  }
+  .manual-root .case-stage-nav .case-progress,
+  .manual-root .case-stage-nav .case-pages{display:none}
+  .manual-root .case-stage-nav .arrow-nav{display:flex}
+
+  .manual-root .case-dossier{
+    padding-top:24px;
+    padding-bottom:22px;
+  }
+  .manual-root .case-dossier-head{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding-bottom:18px;
+  }
+  .manual-root .case-dossier-title h2{
+    font-size:clamp(58px,13vw,88px);
+    white-space:normal;
+  }
+  .manual-root .case-dossier-meta{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .manual-root .case-dossier-meta>div{min-height:68px}
+  .manual-root .case-dossier-stage{
+    grid-template-columns:1fr;
+    margin-top:18px;
+  }
+  .manual-root .case-dossier-media{
+    border-right:0;
+    border-bottom:1px solid #4b4843;
+  }
+  .manual-root .case-dossier-rail{
+    min-height:0;
+  }
+  .manual-root .case-dossier-note{
+    margin-top:0;
+  }
+  .manual-root .case-dossier-foot{
+    grid-template-columns:1fr;
+  }
+  .manual-root .case-dossier-footnote{
+    grid-template-columns:44px 1fr;
+  }
+
+  .manual-root .collab-workorder{
+    padding-top:38px;
+    padding-bottom:36px;
+  }
+  .manual-root .collab-workorder-head{
+    grid-template-columns:1fr;
+    gap:20px;
+    padding-bottom:28px;
+  }
+  .manual-root .collab-workorder-head .collab-kicker,
+  .manual-root .collab-workorder-head h2,
+  .manual-root .collab-workorder-head p{
+    grid-column:1;
+    grid-row:auto;
+  }
+  .manual-root .collab-workorder-head h2{
+    font-size:clamp(54px,12vw,84px);
+  }
+  .manual-root .collab-workorder-head p{
+    max-width:620px;
+    font-size:15px;
+  }
+  .manual-root .collab-process{
+    grid-template-columns:1fr;
+  }
+  .manual-root .collab-process-step,
+  .manual-root .collab-process-step + .collab-process-step{
+    min-height:0;
+    padding:20px 0;
+    border-right:0;
+    border-bottom:1px solid rgba(43,40,37,.28);
+  }
+  .manual-root .collab-process-step:last-child{border-bottom:0}
+  .manual-root .collab-process-step>span{margin-bottom:12px}
+  .manual-root .collab-workorder-cta{
+    grid-template-columns:1fr;
+  }
+  .manual-root .collab-workorder-cta>a{
+    min-height:72px;
+    border:12px solid #292826;
+    border-top:0;
+  }
+}
+
+@media(max-width:520px){
+  .manual-root .case-dossier-title .eyebrow{font-size:8px}
+  .manual-root .case-dossier-title h2{font-size:clamp(54px,15vw,74px)}
+  .manual-root .case-dossier-meta{grid-template-columns:1fr}
+  .manual-root .case-dossier-meta>div{
+    min-height:0;
+    display:grid;
+    grid-template-columns:62px 1fr;
+    gap:10px;
+    padding:9px 0;
+    border-right:0;
+    border-bottom:1px solid rgba(49,46,42,.22);
+  }
+  .manual-root .case-dossier-meta>div:last-child{border-bottom:0}
+  .manual-root .case-dossier-meta span{margin-bottom:0}
+  .manual-root .project-bar{font-size:8px}
+  .manual-root .case-dossier-actions .button{width:100%;min-width:0}
+  .manual-root .case-dossier-footnote{display:block}
+  .manual-root .case-dossier-footnote>span{display:block;margin-bottom:8px}
+  .manual-root .collab-workorder-head h2{font-size:clamp(52px,14vw,70px)}
+  .manual-root .collab-workorder-cta>div{padding:18px}
+  .manual-root .collab-workorder-cta>a{font-size:15px;padding:0 16px}
+}
