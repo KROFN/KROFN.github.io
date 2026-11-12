@@ -1,0 +1,124 @@
+{
+  "issue": "CTA handwritten arrow detached from button",
+  "fix": "Note anchored to .collab-cta (position:relative) instead of the entire column",
+  "tip_estimate": "20% of image width, 85% of image height, verified by cropped browser screenshots",
+  "results": [
+    {
+      "width": 1440,
+      "note_visible": true,
+      "button_bounds": {
+        "x": 743,
+        "y": 2415,
+        "w": 560,
+        "h": 58,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": {
+        "x": 1243,
+        "y": 2455
+      },
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 1024,
+      "note_visible": true,
+      "button_bounds": {
+        "x": 526,
+        "y": 2292,
+        "w": 452,
+        "h": 58,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": {
+        "x": 908,
+        "y": 2327
+      },
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 768,
+      "note_visible": true,
+      "button_bounds": {
+        "x": 29,
+        "y": 2393,
+        "w": 560,
+        "h": 58,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": {
+        "x": 501,
+        "y": 2428
+      },
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 600,
+      "note_visible": true,
+      "button_bounds": {
+        "x": 29,
+        "y": 2401,
+        "w": 542,
+        "h": 58,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": {
+        "x": 483,
+        "y": 2436
+      },
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 520,
+      "note_visible": false,
+      "button_bounds": {
+        "x": 17,
+        "y": 3077,
+        "w": 486,
+        "h": 51,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": null,
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 390,
+      "note_visible": false,
+      "button_bounds": {
+        "x": 17,
+        "y": 3108,
+        "w": 356,
+        "h": 51,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": null,
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    },
+    {
+      "width": 320,
+      "note_visible": false,
+      "button_bounds": {
+        "x": 13,
+        "y": 3163,
+        "w": 294,
+        "h": 51,
+        "display": "inline-flex",
+        "position": "relative"
+      },
+      "arrow_tip_estimated": null,
+      "inside_CTA": true,
+      "horizontal_overflow": 0
+    }
+  ]
+}

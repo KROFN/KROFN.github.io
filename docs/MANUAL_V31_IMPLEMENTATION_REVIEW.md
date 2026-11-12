@@ -32,3 +32,9 @@ No new sections, visual experiments, metrics or alternative art direction were i
 
 ## Review assets
 `review-v31/KROFN_IMPL_{1440,390,320}_{SIRIUS,LANIAKEA,KARATAEVA}.webp` are **actual browser screenshots of this React implementation**, not the approved reference screenshots. They are review files and do not enter the Vite dist build.
+
+## CTA handwritten arrow correction (2026-11-11)
+- During independent review, the approved handwritten arrow was observed ending below the Telegram button at 1440px and outside the button on narrower desktop/tablet widths.
+- The existing original `footer-note.png` is unchanged. Its placement is now relative to a dedicated `.collab-cta` wrapper rather than `.collab-side`, with breakpoint-specific coordinates. `pointer-events: none` preserves the full click target.
+- Chromium screenshots after the patch: `review-v31/CTA_ARROW_1440.webp`, `review-v31/CTA_ARROW_768.webp`. The geometric browser audit `review-v31/CTA_ARROW_QA.json` checks that the visible arrow tip falls within the CTA at 600, 768, 1024, 1440px; hidden-note mobile layouts are also checked.
+- All 18 main responsive carousel states and existing route/build tests were revalidated. This is a local annotation correction, not a redesign.
