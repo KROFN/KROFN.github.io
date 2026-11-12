@@ -237,17 +237,21 @@ body[data-route="manual"] a,body[data-route="manual"] button{cursor:pointer;}
 .manual-root .page-case,.manual-root .arrow-nav button,.manual-root .main-nav a,.manual-root .footer-right a{touch-action:manipulation;}
 @media(max-width:790px){.manual-root .main-nav>a,.manual-root .arrow-nav button,.manual-root .page-case,.manual-root .footer-right a{min-height:46px;}}
 
-/* V3.1 QA hotfix: handwritten CTA arrow is anchored to the CTA instead of the whole column.
-   Keep the approved source artwork; the arrowhead must end INSIDE the clickable button. */
+/* §03 compositional correction: keep the original handwritten art in the OUTER
+   margin to the right of the button. The lettering must never cover the checklist,
+   CTA copy, or white CTA icon; the arrow tip alone may enter the button.
+   This is anchored to .collab-cta, never to the overall right-hand column. */
 .manual-root .collab-cta{position:relative;width:100%;max-width:560px;margin-top:23px;isolation:isolate}
 .manual-root .collab-side .collab-cta .button{width:100%;max-width:none;margin-top:0;position:relative;z-index:1}
-.manual-root .collab-cta .footer-hand{position:absolute;pointer-events:none;z-index:2;display:block;width:200px;right:-100px;top:-122px;opacity:1}
-@media(max-width:1170px){
-  .manual-root .collab-cta .footer-hand{width:145px;right:-46px;top:-82px}
+.manual-root .collab-cta .footer-hand{position:absolute;pointer-events:none;z-index:2;display:block;width:200px;right:-130px;top:-145px;opacity:1}
+/* Two-column mid-width leaves no clean margin for this optional handwriting.
+   Keep the artwork on wide desktop and on single-column tablet; never clip/reduce it into illegibility. */
+@media(min-width:791px) and (max-width:1410px){
+  .manual-root .collab-cta .footer-hand{display:none}
 }
 @media(max-width:790px){
-  .manual-root .collab-cta .footer-hand{width:130px;right:-16px;top:-70px}
+  .manual-root .collab-cta .footer-hand{width:130px;right:-85px;top:-87px}
 }
-@media(max-width:520px){
+@media(max-width:680px){
   .manual-root .collab-cta .footer-hand{display:none}
 }

@@ -1,124 +1,486 @@
 {
-  "issue": "CTA handwritten arrow detached from button",
-  "fix": "Note anchored to .collab-cta (position:relative) instead of the entire column",
-  "tip_estimate": "20% of image width, 85% of image height, verified by cropped browser screenshots",
-  "results": [
+  "method": "Chromium DOM geometry plus original 199x190 PNG alpha-mask (handwritten text x73..170, arrow tip x36/y163)",
+  "data": [
     {
-      "width": 1440,
-      "note_visible": true,
-      "button_bounds": {
-        "x": 743,
-        "y": 2415,
-        "w": 560,
-        "h": 58,
-        "display": "inline-flex",
-        "position": "relative"
-      },
-      "arrow_tip_estimated": {
-        "x": 1243,
-        "y": 2455
-      },
-      "inside_CTA": true,
-      "horizontal_overflow": 0
-    },
-    {
-      "width": 1024,
-      "note_visible": true,
-      "button_bounds": {
-        "x": 526,
-        "y": 2292,
-        "w": 452,
-        "h": 58,
-        "display": "inline-flex",
-        "position": "relative"
-      },
-      "arrow_tip_estimated": {
-        "x": 908,
-        "y": 2327
-      },
-      "inside_CTA": true,
-      "horizontal_overflow": 0
-    },
-    {
-      "width": 768,
-      "note_visible": true,
-      "button_bounds": {
-        "x": 29,
-        "y": 2393,
-        "w": 560,
-        "h": 58,
-        "display": "inline-flex",
-        "position": "relative"
-      },
-      "arrow_tip_estimated": {
-        "x": 501,
-        "y": 2428
-      },
-      "inside_CTA": true,
-      "horizontal_overflow": 0
-    },
-    {
-      "width": 600,
-      "note_visible": true,
-      "button_bounds": {
-        "x": 29,
-        "y": 2401,
-        "w": 542,
-        "h": 58,
-        "display": "inline-flex",
-        "position": "relative"
-      },
-      "arrow_tip_estimated": {
-        "x": 483,
-        "y": 2436
-      },
-      "inside_CTA": true,
-      "horizontal_overflow": 0
-    },
-    {
-      "width": 520,
-      "note_visible": false,
-      "button_bounds": {
-        "x": 17,
-        "y": 3077,
-        "w": 486,
+      "width": 320,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 13,
+        "y": 3163.078125,
+        "right": 307,
+        "bottom": 3214.078125,
+        "w": 294,
         "h": 51,
-        "display": "inline-flex",
-        "position": "relative"
+        "display": "inline-flex"
       },
-      "arrow_tip_estimated": null,
-      "inside_CTA": true,
-      "horizontal_overflow": 0
+      "check": {
+        "x": 40,
+        "y": 3088.890625,
+        "right": 307,
+        "bottom": 3128.078125,
+        "w": 267,
+        "h": 39.1875,
+        "display": "block"
+      },
+      "icon": {
+        "x": 277.984375,
+        "y": 3177.578125,
+        "right": 296,
+        "bottom": 3199.578125,
+        "w": 18.015625,
+        "h": 22,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
     },
     {
       "width": 390,
-      "note_visible": false,
-      "button_bounds": {
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
         "x": 17,
-        "y": 3108,
+        "y": 3107.78125,
+        "right": 373,
+        "bottom": 3158.78125,
         "w": 356,
         "h": 51,
-        "display": "inline-flex",
-        "position": "relative"
+        "display": "inline-flex"
       },
-      "arrow_tip_estimated": null,
-      "inside_CTA": true,
-      "horizontal_overflow": 0
+      "check": {
+        "x": 44,
+        "y": 3053.1875,
+        "right": 365.125,
+        "bottom": 3072.78125,
+        "w": 321.125,
+        "h": 19.59375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 343.984375,
+        "y": 3122.28125,
+        "right": 362,
+        "bottom": 3144.28125,
+        "w": 18.015625,
+        "h": 22,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
     },
     {
-      "width": 320,
-      "note_visible": false,
-      "button_bounds": {
-        "x": 13,
-        "y": 3163,
-        "w": 294,
+      "width": 520,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 17,
+        "y": 3076.59375,
+        "right": 503,
+        "bottom": 3127.59375,
+        "w": 486,
         "h": 51,
-        "display": "inline-flex",
-        "position": "relative"
+        "display": "inline-flex"
       },
-      "arrow_tip_estimated": null,
-      "inside_CTA": true,
-      "horizontal_overflow": 0
+      "check": {
+        "x": 44,
+        "y": 3022,
+        "right": 365.125,
+        "bottom": 3041.59375,
+        "w": 321.125,
+        "h": 19.59375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 473.984375,
+        "y": 3091.09375,
+        "right": 492,
+        "bottom": 3113.09375,
+        "w": 18.015625,
+        "h": 22,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 600,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 29,
+        "y": 2401.0625,
+        "right": 571,
+        "bottom": 2459.0625,
+        "w": 542,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 68,
+        "y": 2338.96875,
+        "right": 457.921875,
+        "bottom": 2361.0625,
+        "w": 389.921875,
+        "h": 22.09375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 525.3125,
+        "y": 2417.5625,
+        "right": 546,
+        "bottom": 2442.5625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 768,
+      "active": true,
+      "tip": {
+        "x": 567.5175879396985,
+        "y": 2412.519654605263
+      },
+      "ink": {
+        "left": 591.6884422110553,
+        "top": 2332.8283717105264,
+        "right": 655.0552763819096,
+        "bottom": 2404.027960526316
+      },
+      "button": {
+        "x": 29,
+        "y": 2393.046875,
+        "right": 589,
+        "bottom": 2451.046875,
+        "w": 560,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 68,
+        "y": 2330.953125,
+        "right": 457.921875,
+        "bottom": 2353.046875,
+        "w": 389.921875,
+        "h": 22.09375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 543.3125,
+        "y": 2409.546875,
+        "right": 564,
+        "bottom": 2434.546875,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 800,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 414.21875,
+        "y": 2186.40625,
+        "right": 754,
+        "bottom": 2254.40625,
+        "w": 339.78125,
+        "h": 68,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 453.21875,
+        "y": 2097.03125,
+        "right": 754,
+        "bottom": 2146.40625,
+        "w": 300.78125,
+        "h": 49.375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 708.3125,
+        "y": 2207.90625,
+        "right": 729,
+        "bottom": 2232.90625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1024,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 525.65625,
+        "y": 2292.328125,
+        "right": 977.984375,
+        "bottom": 2350.328125,
+        "w": 452.328125,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 564.65625,
+        "y": 2202.953125,
+        "right": 977.984375,
+        "bottom": 2252.328125,
+        "w": 413.328125,
+        "h": 49.375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 932.296875,
+        "y": 2308.828125,
+        "right": 952.984375,
+        "bottom": 2333.828125,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1170,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 598.296875,
+        "y": 2274.125,
+        "right": 1124,
+        "bottom": 2332.125,
+        "w": 525.703125,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 637.296875,
+        "y": 2209.4375,
+        "right": 1073.09375,
+        "bottom": 2234.125,
+        "w": 435.796875,
+        "h": 24.6875,
+        "display": "block"
+      },
+      "icon": {
+        "x": 1078.3125,
+        "y": 2290.625,
+        "right": 1099,
+        "bottom": 2315.625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1171,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 608.90625,
+        "y": 2266.5625,
+        "right": 1080,
+        "bottom": 2324.5625,
+        "w": 471.09375,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 647.90625,
+        "y": 2177.1875,
+        "right": 1080,
+        "bottom": 2226.5625,
+        "w": 432.09375,
+        "h": 49.375,
+        "display": "block"
+      },
+      "icon": {
+        "x": 1034.3125,
+        "y": 2283.0625,
+        "right": 1055,
+        "bottom": 2308.0625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "active": false,
+      "tip": null,
+      "ink": null,
+      "button": {
+        "x": 663.125,
+        "y": 2311.90625,
+        "right": 1188.984375,
+        "bottom": 2369.90625,
+        "w": 525.859375,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 702.125,
+        "y": 2247.21875,
+        "right": 1137.921875,
+        "bottom": 2271.90625,
+        "w": 435.796875,
+        "h": 24.6875,
+        "display": "block"
+      },
+      "icon": {
+        "x": 1143.296875,
+        "y": 2328.40625,
+        "right": 1163.984375,
+        "bottom": 2353.40625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "active": true,
+      "tip": {
+        "x": 1268.915279522613,
+        "y": 2433.5208059210527
+      },
+      "ink": {
+        "left": 1306.1012091708542,
+        "top": 2310.9087993421053,
+        "right": 1403.588646356784,
+        "bottom": 2420.4555921052633
+      },
+      "button": {
+        "x": 742.734375,
+        "y": 2414.703125,
+        "right": 1302.734375,
+        "bottom": 2472.703125,
+        "w": 560,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 781.734375,
+        "y": 2350.015625,
+        "right": 1217.53125,
+        "bottom": 2374.703125,
+        "w": 435.796875,
+        "h": 24.6875,
+        "display": "block"
+      },
+      "icon": {
+        "x": 1257.046875,
+        "y": 2431.203125,
+        "right": 1277.734375,
+        "bottom": 2456.203125,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
+    },
+    {
+      "width": 1920,
+      "active": true,
+      "tip": {
+        "x": 1508.915279522613,
+        "y": 2441.2239309210527
+      },
+      "ink": {
+        "left": 1546.1012091708542,
+        "top": 2318.6119243421053,
+        "right": 1643.588646356784,
+        "bottom": 2428.1587171052633
+      },
+      "button": {
+        "x": 982.734375,
+        "y": 2422.40625,
+        "right": 1542.734375,
+        "bottom": 2480.40625,
+        "w": 560,
+        "h": 58,
+        "display": "inline-flex"
+      },
+      "check": {
+        "x": 1021.734375,
+        "y": 2357.71875,
+        "right": 1457.53125,
+        "bottom": 2382.40625,
+        "w": 435.796875,
+        "h": 24.6875,
+        "display": "block"
+      },
+      "icon": {
+        "x": 1497.046875,
+        "y": 2438.90625,
+        "right": 1517.734375,
+        "bottom": 2463.90625,
+        "w": 20.6875,
+        "h": 25,
+        "display": "block"
+      },
+      "overflow": 0,
+      "noLetterOverlap": true,
+      "arrowHitsCTA": true,
+      "noClipping": true,
+      "pass": true
     }
-  ]
+  ],
+  "failures": []
 }
