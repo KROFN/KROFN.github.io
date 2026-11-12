@@ -309,12 +309,6 @@ export default function CaseStage({
                 </div>
               </div>
 
-              <div className="case-note-single" aria-label="Редакционная аннотация">
-                <span>{item.annotationRight.join(" ")}</span>
-                <svg aria-hidden="true" viewBox="0 0 120 54">
-                  <path d="M112 8 C82 8 58 16 35 35 M44 25 L35 35 L50 39" />
-                </svg>
-              </div>
             </div>
           </div>
 

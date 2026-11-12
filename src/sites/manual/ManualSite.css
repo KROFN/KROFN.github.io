@@ -977,3 +977,25 @@ body[data-route="manual"]{overflow-x:clip}
   .manual-root .scene-collab .offer-lines>div{font-size:15px}
   .manual-root .scene-collab .final-button{min-height:58px;font-size:15px}
 }
+
+
+/* V3.2 visual self-review: even a single handwritten case note pulled the case
+   stage back toward poster/mockup territory. Case switching itself is the accent. */
+.manual-root .case-note-single{display:none!important}
+
+@media(max-width:900px){
+  .manual-root .case-state{
+    grid-template-areas:
+      "title"
+      "facts"
+      "visual"
+      "analysis"
+      "links";
+  }
+  .manual-root .case-copy{display:contents}
+  .manual-root .case-copy .case-title-wrap{grid-area:title;margin-bottom:0}
+  .manual-root .case-copy .case-mini-facts{grid-area:facts}
+  .manual-root .case-visual{grid-area:visual}
+  .manual-root .case-copy .case-analysis{grid-area:analysis}
+  .manual-root .case-copy .case-links{grid-area:links;margin-top:0}
+}

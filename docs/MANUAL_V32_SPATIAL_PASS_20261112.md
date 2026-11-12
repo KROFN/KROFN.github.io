@@ -18,11 +18,11 @@ Owner also rejected the pervasive red circling/underlining language, especially 
   - three cases change as the user scrolls;
   - direct tabs move to the corresponding scroll state;
   - title, type, role, status, technical breakdown, links and media switch together;
-  - only one optional handwritten red annotation remains in the case viewport.
+  - handwritten annotations are removed from the case media itself; the active tab/progress state carries the accent instead.
 - Project media uses a restrained portfolio-view frame rather than decorative fake-browser chrome.
 - Tablet/mobile keeps natural document flow and explicit previous/next controls; no scroll-jacking.
 - §03 is a separate dark closing scene instead of another continuation of the same paper sheet.
-- Red is limited to semantic/accent use: nav indices, active case marker, one case annotation and the final-scene kicker.
+- Red is limited to semantic/accent use: nav indices, the active case marker, the Hero diagram note and the final-scene kicker.
 
 ## Verification
 
