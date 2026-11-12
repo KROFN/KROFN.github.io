@@ -1,0 +1,286 @@
+[
+  {
+    "viewport": "1920",
+    "index": 0,
+    "active": "01 SIRIUS",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 808
+    },
+    "state": {
+      "x": 72,
+      "y": 210,
+      "width": 1776,
+      "height": 690
+    },
+    "media": {
+      "x": 717.375,
+      "y": 269,
+      "width": 1087.625,
+      "height": 568
+    },
+    "copy": {
+      "x": 72,
+      "y": 234,
+      "width": 582.9375,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1920",
+    "index": 1,
+    "active": "02 Ланиакея",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 808
+    },
+    "state": {
+      "x": 72,
+      "y": 210,
+      "width": 1776,
+      "height": 690
+    },
+    "media": {
+      "x": 717.375,
+      "y": 269,
+      "width": 1087.625,
+      "height": 568
+    },
+    "copy": {
+      "x": 72,
+      "y": 234,
+      "width": 582.9375,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1920",
+    "index": 2,
+    "active": "03 Karataeva",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 808
+    },
+    "state": {
+      "x": 72,
+      "y": 210,
+      "width": 1776,
+      "height": 690
+    },
+    "media": {
+      "x": 717.375,
+      "y": 269,
+      "width": 1087.625,
+      "height": 568
+    },
+    "copy": {
+      "x": 72,
+      "y": 234,
+      "width": 582.9375,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1920",
+    "metrics": {
+      "overflow": 0,
+      "mast": {
+        "x": 72,
+        "y": 0,
+        "width": 1776,
+        "height": 92,
+        "top": 0,
+        "right": 1848,
+        "bottom": 92,
+        "left": 72
+      },
+      "hero": {
+        "x": 0,
+        "y": 92,
+        "width": 1920,
+        "height": 808,
+        "top": 92,
+        "right": 1920,
+        "bottom": 900,
+        "left": 0
+      },
+      "cases": {
+        "x": 0,
+        "y": 900,
+        "width": 1920,
+        "height": 2790,
+        "top": 900,
+        "right": 1920,
+        "bottom": 3690,
+        "left": 0
+      }
+    },
+    "collab": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 808
+    },
+    "headerAfter": {
+      "x": 72,
+      "y": 0,
+      "width": 1776,
+      "height": 92
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1440",
+    "index": 0,
+    "active": "01 SIRIUS",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 808
+    },
+    "state": {
+      "x": 43,
+      "y": 210,
+      "width": 1354,
+      "height": 690
+    },
+    "media": {
+      "x": 574,
+      "y": 328.625,
+      "width": 788.890625,
+      "height": 443.75
+    },
+    "copy": {
+      "x": 43,
+      "y": 234,
+      "width": 483.921875,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1440",
+    "index": 1,
+    "active": "02 Ланиакея",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 808
+    },
+    "state": {
+      "x": 43,
+      "y": 210,
+      "width": 1354,
+      "height": 690
+    },
+    "media": {
+      "x": 574,
+      "y": 328.625,
+      "width": 788.890625,
+      "height": 443.75
+    },
+    "copy": {
+      "x": 43,
+      "y": 234,
+      "width": 483.921875,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1440",
+    "index": 2,
+    "active": "03 Karataeva",
+    "stage": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 808
+    },
+    "state": {
+      "x": 43,
+      "y": 210,
+      "width": 1354,
+      "height": 690
+    },
+    "media": {
+      "x": 574,
+      "y": 328.625,
+      "width": 788.890625,
+      "height": 443.75
+    },
+    "copy": {
+      "x": 43,
+      "y": 234,
+      "width": 483.921875,
+      "height": 642
+    },
+    "errors": []
+  },
+  {
+    "viewport": "1440",
+    "metrics": {
+      "overflow": 0,
+      "mast": {
+        "x": 43,
+        "y": 0,
+        "width": 1354,
+        "height": 92,
+        "top": 0,
+        "right": 1397,
+        "bottom": 92,
+        "left": 43
+      },
+      "hero": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 808,
+        "top": 92,
+        "right": 1440,
+        "bottom": 900,
+        "left": 0
+      },
+      "cases": {
+        "x": 0,
+        "y": 900,
+        "width": 1440,
+        "height": 2790,
+        "top": 900,
+        "right": 1440,
+        "bottom": 3690,
+        "left": 0
+      }
+    },
+    "collab": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 808
+    },
+    "headerAfter": {
+      "x": 43,
+      "y": 0,
+      "width": 1354,
+      "height": 92
+    },
+    "errors": []
+  },
+  {
+    "viewport": "390",
+    "overflow": 0,
+    "active": "02 / 03",
+    "errors": []
+  }
+]

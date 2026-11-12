@@ -1,0 +1,188 @@
+[
+  {
+    "vp": "1649",
+    "case": 1,
+    "active": "01 SIRIUS",
+    "overflow": 0,
+    "title": {
+      "x": 72,
+      "y": 981.796875,
+      "width": 899.390625,
+      "height": 97.359375
+    },
+    "stage": {
+      "x": 72,
+      "y": 1128.15625,
+      "width": 1505,
+      "height": 738.875
+    },
+    "errors": []
+  },
+  {
+    "vp": "1649",
+    "case": 2,
+    "active": "02 Ланиакея",
+    "overflow": 0,
+    "title": {
+      "x": 72,
+      "y": 981.796875,
+      "width": 899.390625,
+      "height": 97.359375
+    },
+    "stage": {
+      "x": 72,
+      "y": 1128.15625,
+      "width": 1505,
+      "height": 738.875
+    },
+    "errors": []
+  },
+  {
+    "vp": "1649",
+    "case": 3,
+    "active": "03 Karataeva",
+    "overflow": 0,
+    "title": {
+      "x": 72,
+      "y": 981.796875,
+      "width": 899.390625,
+      "height": 97.359375
+    },
+    "stage": {
+      "x": 72,
+      "y": 1128.15625,
+      "width": 1505,
+      "height": 738.875
+    },
+    "errors": []
+  },
+  {
+    "vp": "1649",
+    "collabTop": 92.03125,
+    "errors": []
+  },
+  {
+    "vp": "1440",
+    "case": 1,
+    "active": "01 SIRIUS",
+    "overflow": 0,
+    "title": {
+      "x": 43,
+      "y": 961.796875,
+      "width": 810.25,
+      "height": 85.015625
+    },
+    "stage": {
+      "x": 43,
+      "y": 1095.8125,
+      "width": 1354,
+      "height": 653.9375
+    },
+    "errors": []
+  },
+  {
+    "vp": "1440",
+    "case": 2,
+    "active": "02 Ланиакея",
+    "overflow": 0,
+    "title": {
+      "x": 43,
+      "y": 961.796875,
+      "width": 810.25,
+      "height": 85.015625
+    },
+    "stage": {
+      "x": 43,
+      "y": 1095.8125,
+      "width": 1354,
+      "height": 653.9375
+    },
+    "errors": []
+  },
+  {
+    "vp": "1440",
+    "case": 3,
+    "active": "03 Karataeva",
+    "overflow": 0,
+    "title": {
+      "x": 43,
+      "y": 961.796875,
+      "width": 810.25,
+      "height": 85.015625
+    },
+    "stage": {
+      "x": 43,
+      "y": 1095.8125,
+      "width": 1354,
+      "height": 653.9375
+    },
+    "errors": []
+  },
+  {
+    "vp": "1440",
+    "collabTop": 91.75,
+    "errors": []
+  },
+  {
+    "vp": "390",
+    "case": 1,
+    "active": "01 / 03",
+    "overflow": 0,
+    "title": {
+      "x": 17,
+      "y": 7.9375,
+      "width": 356,
+      "height": 47.96875
+    },
+    "stage": {
+      "x": 17,
+      "y": 216.390625,
+      "width": 356,
+      "height": 620.734375
+    },
+    "errors": []
+  },
+  {
+    "vp": "390",
+    "case": 2,
+    "active": "02 / 03",
+    "overflow": 0,
+    "title": {
+      "x": 17,
+      "y": 494.9375,
+      "width": 356,
+      "height": 47.96875
+    },
+    "stage": {
+      "x": 17,
+      "y": 703.390625,
+      "width": 356,
+      "height": 610.359375
+    },
+    "errors": []
+  },
+  {
+    "vp": "390",
+    "case": 3,
+    "active": "03 / 03",
+    "overflow": 0,
+    "title": {
+      "x": 17,
+      "y": 494.9375,
+      "width": 356,
+      "height": 47.96875
+    },
+    "stage": {
+      "x": 17,
+      "y": 703.390625,
+      "width": 356,
+      "height": 594.421875
+    },
+    "errors": []
+  },
+  {
+    "vp": "390",
+    "collabTop": 122.109375,
+    "errors": []
+  }
+]

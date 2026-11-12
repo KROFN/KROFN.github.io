@@ -1,0 +1,266 @@
+{
+  "states": [
+    {
+      "width": 320,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 320
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 320
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 320,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 320
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 390
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 390
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 390,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 390
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 599
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 660
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 768,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 660
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 798
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 880
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 880
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1123
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1160
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1160
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "case": 0,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1620
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "case": 1,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1160
+      },
+      "errors": [],
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "case": 2,
+      "pageOverflow": 0,
+      "heroVsStackOverlap": 0,
+      "media": {
+        "ready": true,
+        "width": 1160
+      },
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "anchorReturn": [
+    {
+      "width": 320,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "headerY": 0,
+      "sheetScrollTop": 0,
+      "windowScrollY": 0,
+      "passed": true
+    }
+  ],
+  "failed": [],
+  "screenshotMethod": "viewport scroll segments stitched after paint; no fullPage capture"
+}

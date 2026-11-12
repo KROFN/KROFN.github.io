@@ -33,7 +33,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, lang);
-    document.documentElement.lang = portfolioContent[lang].htmlLang;
+    document.documentElement.lang = window.location.pathname.replace(/\/+$/, "") === "" ? "ru" : portfolioContent[lang].htmlLang;
   }, [lang]);
 
   const value = useMemo<LangContextValue>(

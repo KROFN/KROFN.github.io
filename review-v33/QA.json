@@ -1,0 +1,38 @@
+[
+  {
+    "vp": "1920",
+    "before": {
+      "y": 872,
+      "casesTop": 28,
+      "casesH": 935.78125,
+      "collabTop": 963.78125
+    },
+    "after": {
+      "y": 1747,
+      "collabTop": 88.78125,
+      "active": "01 SIRIUS"
+    },
+    "errors": []
+  },
+  {
+    "vp": "1440",
+    "before": {
+      "y": 801,
+      "casesTop": 99,
+      "casesH": 793,
+      "collabTop": 892
+    },
+    "after": {
+      "y": 1604,
+      "collabTop": 89,
+      "active": "01 SIRIUS"
+    },
+    "errors": []
+  },
+  {
+    "vp": "390",
+    "overflow": 0,
+    "collabTop": 121.90625,
+    "errors": []
+  }
+]
