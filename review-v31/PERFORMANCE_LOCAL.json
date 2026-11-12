@@ -3,25 +3,25 @@
   "report": [
     {
       "width": 1440,
-      "domContentLoaded": 223,
-      "load": 578,
-      "fcp": 340,
-      "lcp": 476,
+      "domContentLoaded": 213,
+      "load": 476,
+      "fcp": 324,
+      "lcp": 468,
       "cls": 0.0032,
-      "resourceCount": 11,
-      "bytesReported": 188427,
-      "manualMediaRequests": 8
+      "resourceCount": 15,
+      "bytesReported": 545136,
+      "manualMediaRequests": 12
     },
     {
       "width": 390,
-      "domContentLoaded": 216,
-      "load": 520,
-      "fcp": 252,
-      "lcp": 340,
-      "cls": 0.0075,
-      "resourceCount": 11,
-      "bytesReported": 188427,
-      "manualMediaRequests": 8
+      "domContentLoaded": 195,
+      "load": 419,
+      "fcp": 196,
+      "lcp": 300,
+      "cls": 0.0007,
+      "resourceCount": 14,
+      "bytesReported": 520489,
+      "manualMediaRequests": 11
     }
   ]
 }

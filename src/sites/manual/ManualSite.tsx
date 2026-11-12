@@ -24,12 +24,8 @@ export default function ManualSite() {
   return (
     <div className="manual-root" lang="ru">
       <div className="sheet" data-slide={active}>
-        <div aria-hidden="true" className="press-corner press-tl" />
-        <div aria-hidden="true" className="press-corner press-tr" />
-        <div aria-hidden="true" className="press-corner press-bl" />
-        <div aria-hidden="true" className="press-corner press-br" />
         <ManualHeader />
-        <main id="top"><ManualHero/><CaseStage active={active} setActive={setActive}/><ManualCollaboration/></main>
+        <main><ManualHero/><CaseStage active={active} setActive={setActive}/><ManualCollaboration/></main>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, type Dispatch, type SetStateA
 import { manualCases } from "./content";
 import type { ManualCase } from "./content";
 
-const ASSET_ROOT = "/media/manual/assets/";
+const ASSET_ROOT = "/media/manual/vector/";
 
 function InkLines({ lines }: { lines: readonly string[] }) {
   return <>{lines.map((line, i) => <span key={i}>{line}{i < lines.length - 1 ? <br /> : null}</span>)}</>;
@@ -14,7 +14,6 @@ function CaseMedia({item}: {item: ManualCase}) {
     <div className={`preview preview-${item.id} is-visible${failed ? " missing-authentic-media" : ""}`} data-testid="current-case-media">
       {!failed && <img key={item.id} src={item.media.src} srcSet={item.media.srcSet} sizes={item.media.sizes} alt={item.mediaAlt} loading={item.id === "sirius" ? "eager" : "lazy"} decoding="async" onError={() => setFailed(true)} className={item.id === "sirius" ? undefined : "project-authentic"} />}
       {failed && <span className="media-error" role="status">Исходное изображение недоступно</span>}
-      <span className="media-watermark">{item.id === "sirius" ? "КОНЦЕПТ / НЕ LIVE-СКРИНШОТ" : item.id === "laniakea" ? "СКРИНШОТ ЛОКАЛЬНОЙ СБОРКИ" : "СКРИНШОТ ИСХОДНОГО ПРОЕКТА"}</span>
     </div>
   );
 }
@@ -29,6 +28,15 @@ function ProjectImageDialog({ item, dialogRef, onClose }: {item: ManualCase;dial
 export default function CaseStage({active, setActive}: {active: number;setActive: Dispatch<SetStateAction<number>>}) {
   const item = manualCases[active];
   const dialogRef = useRef<HTMLDialogElement | null>(null);
+  useEffect(() => {
+    // Prefetch the adjacent approved case images so switching has no lazy-load gap.
+    const previews = manualCases.filter((c) => c.id !== item.id).map((c) => {
+      const picture = new Image();
+      picture.src = c.media.src;
+      return picture;
+    });
+    return () => { previews.forEach((picture) => {picture.onload=null;picture.onerror=null;}); };
+  }, [item.id]);
   const expandRef = useRef<HTMLButtonElement | null>(null);
   const touchStart = useRef<{x:number;y:number}|null>(null);
   const select = useCallback((n: number) => setActive((n + manualCases.length) % manualCases.length),[]);
@@ -53,28 +61,33 @@ export default function CaseStage({active, setActive}: {active: number;setActive
       </div></div>
       <div className="work-frame">
         <div aria-hidden="true" className="browser-chrome"><span className="dots"><i/><i/><i/></span><span className="chrome-title">{item.chrome}</span><span className="chrome-icons">↻</span></div>
-        <div className="project-viewport" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}><CaseMedia item={item} /></div>
+        <div className="project-viewport" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <CaseMedia item={item} />
+          <button type="button" className="preview-open" aria-label={"Открыть полный кадр проекта " + item.name} onClick={() => dialogRef.current?.showModal()} />
+        </div>
         {active===0 && <div className="sirius-inspection" aria-label="Увеличенный фрагмент художественного концепта SIRIUS"><div className="sirius-detail"><img src={item.media.src} alt="Увеличенный фрагмент исходного концепта: заголовок SIRIUS, модель и студийный свет" loading="lazy"/></div><div className="sirius-detail-label"><strong>01 / ДЕТАЛЬ КАДРА</strong><span>Центральная композиция крупнее; полный кадр — выше.</span></div></div>}
         <div className="media-actions"><button type="button" className="media-expand" ref={expandRef} onClick={() => dialogRef.current?.showModal()} aria-haspopup="dialog">Рассмотреть изображение целиком <span aria-hidden="true">↗</span></button></div>
-        <div className="work-media-caption">{item.mediaCaption}</div>
       </div>
       <div className="outer-annotation right"><div aria-label="Редакционная аннотация" className="case-mark case-mark-right"><span className="case-mark-line"><InkLines lines={item.annotationRight}/></span><svg aria-hidden="true" viewBox="0 0 140 100"><path d="M104 8 C136 45 95 75 30 83 M42 68 L30 83 L52 91"/></svg></div></div>
     </div>
-    <div className="mobile-case-editorial shell"><div className="mobile-note">{item.mobileNote}</div><span className="mobile-proof">{item.mobileProof}</span></div>
+    <div className="mobile-case-editorial shell"><div className="mobile-note">{item.mobileNote}</div></div>
     <div className="case-pagination shell" onKeyDown={onKeyDown}>
-      <span className="pagination-label">ПЕРЕЛИСТАТЬ КЕЙС <b>↗</b></span>
       <div aria-label="Выбрать проект" className="case-pages" role="group">{manualCases.map((c,index)=><button key={c.id} type="button" className={`page-case${active===index?" active":""}`} aria-current={active===index?"true":undefined} onClick={()=>select(index)}><span>0{index+1}</span> {c.name}</button>)}</div>
       <div className="arrow-nav"><button type="button" aria-label="Предыдущий кейс" onClick={()=>select(active-1)}>←</button><span aria-live="polite">0{active+1} / 03</span><button type="button" aria-label="Следующий кейс" onClick={()=>select(active+1)}>→</button></div>
     </div>
     <div className="case-analysis shell">
       <div className="technical-label"><strong>ТЕХНИЧЕСКИЙ<br/>РАЗБОР</strong><span aria-hidden="true" className="hatch"/></div>
-      <div className="technical-lines">{item.lines.map((line,index)=><div key={line}><span className={`check${item.id==="sirius"&&index===2?" outline":""}`}>{item.id==="sirius"&&index===2?"—":"✓"}</span><span>{line}</span></div>)}</div>
+        <div className="technical-lines">{item.lines.map((line,index)=><div key={line}>
+          <span className={"check" + (item.id==="sirius"&&index===2?" outline":"")} aria-hidden="true">
+            {item.id==="sirius"&&index===2
+              ? <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+              : <svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6"/></svg>}
+          </span><span>{line}</span></div>)}</div>
       <div aria-label="Комментарий к проекту" className="technical-annotation"><svg aria-hidden="true" viewBox="0 0 32 96"><path d="M20 3 C2 5 2 28 13 38 C24 45 16 47 13 49 C2 57 2 84 20 91"/></svg><span><InkLines lines={item.annotationTech}/></span></div>
     </div>
     <div className="case-links shell">
       {item.source && <a className="button button-dark" href={item.source.url} rel="noreferrer" target="_blank">{item.source.label} <span>↗</span></a>}
       {item.demo && <a className="button button-light" href={item.demo.url} rel="noreferrer" target="_blank">{item.demo.label} <span>↗</span></a>}
-      <span className="project-disclaimer">{item.disclaimer}</span>
     </div>
   </section>
   <ProjectImageDialog item={item} dialogRef={dialogRef} onClose={() => expandRef.current?.focus()} />

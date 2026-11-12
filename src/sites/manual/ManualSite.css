@@ -255,3 +255,126 @@ body[data-route="manual"] a,body[data-route="manual"] button{cursor:pointer;}
 @media(max-width:680px){
   .manual-root .collab-cta .footer-hand{display:none}
 }
+
+
+/* 2026-11-12 visual QA correction, preserving approved V3.1 manual art direction.
+ * Critical: overflow:hidden made .sheet a nested scroll container. Anchors moved
+ * its own scrollTop and left the header above the viewport even at scrollY=0. */
+.manual-root .sheet{max-width:none;overflow:clip}
+body[data-route="manual"]{overflow-x:clip}
+
+/* Typography-led navigation: two sections + one distinguishable contact action. */
+.manual-root .main-nav>a{min-width:145px;padding:12px 18px;font-size:16px}
+.manual-root .main-nav .nav-index{font:600 11px/1 'Roboto Mono',monospace;letter-spacing:.03em;color:var(--red);margin-right:6px}
+.manual-root .main-nav .nav-contact{min-width:160px;background:#272625;color:#f5f0e9;border:1px solid #272625;display:flex;align-items:center;justify-content:center;gap:12px;margin-left:18px}
+.manual-root .main-nav .nav-contact:hover{background:#111;color:#fff}
+.manual-root .main-nav .nav-contact span{font-size:17px}
+
+/* Keep large-format paper on wide monitors: no brown unused outer bands. */
+@media(min-width:1600px){
+ .manual-root .shell{max-width:none;width:calc(100% - 144px)}
+ .manual-root .intro h1{max-width:1240px;font-size:clamp(63px,3.65vw,75px)}
+ .manual-root .intro .lead{max-width:770px}
+ .manual-root .case-heading{grid-template-columns:minmax(400px,33%) minmax(0,1fr)}
+ .manual-root .case-title-wrap h2{font-size:clamp(115px,7.25vw,144px)}
+ .manual-root .case-center{grid-template-columns:100px minmax(0,1fr) 100px}
+}
+@media(min-width:2100px){.manual-root .shell{width:calc(100% - 160px)}}
+
+/* No fake framed crosshairs or registration marks at the page corners. */
+.manual-root .scope-cross,.manual-root .press-corner{display:none}
+
+/* Separate the supporting Figma/React/TS drawing from the two-line H1.
+   It belongs in the secondary annotation field, never over the headline. */
+@media(min-width:791px){
+ .manual-root .layered-aside{top:214px;right:0;width:194px;height:169px;opacity:1}
+ .manual-root .stack-drawing{height:132px;width:194px}
+ .manual-root .hero-hand{top:72px;right:-2px;width:155px}
+}
+@media(min-width:791px) and (max-width:1170px){
+ .manual-root .layered-aside{top:206px;right:-2px;width:158px;height:155px}
+ .manual-root .stack-drawing{width:158px;height:116px}
+ .manual-root .hero-hand{top:63px;width:128px}
+}
+
+/* Original red brush gesture, re-traced from the approved PNG into SVG.
+   Only its lower stroke accents "на субподряд"; red no longer crosses letters. */
+.manual-root .red-ring-word{position:relative;isolation:isolate;z-index:0}
+.manual-root .red-ring-word:before{content:'';display:block;position:absolute;pointer-events:none;left:-2%;width:105%;height:33px;top:calc(100% - 1px);border:0;border-radius:0;background:url('/media/manual/vector/hero-circle.svg') center / 100% 100% no-repeat;clip-path:inset(44% 0 0 0);transform:rotate(-2deg);z-index:-1;opacity:1}
+.manual-root .red-ring-word:after{display:none}
+@media(max-width:790px){
+ .manual-root .red-ring-word:before{top:calc(100% - 1px);height:24px}
+}
+@media(max-width:520px){
+ .manual-root .red-ring-word:before{top:calc(100% - 1px);height:22px}
+}
+
+/* Navigation label is not an action. Desktop gets direct case tabs; phones
+   get arrows and count (swipe remains available), never two competing controls. */
+.manual-root .case-pagination{display:flex;align-items:center;gap:16px;justify-content:center;padding-bottom:19px}
+.manual-root .pagination-label{display:none}
+.manual-root .case-pages{justify-content:center}
+.manual-root .arrow-nav{display:none}
+@media(max-width:700px){
+ .manual-root .case-pagination{display:flex;justify-content:center;min-height:58px}
+ .manual-root .case-pages{display:none}
+ .manual-root .arrow-nav{display:flex}
+ .manual-root .arrow-nav button{min-width:48px;min-height:48px}
+}
+
+/* Real SVG checkmarks are centered inside their technical boxes. */
+.manual-root .check{display:inline-grid;place-items:center;width:22px;height:22px;min-width:22px;flex:0 0 22px;line-height:1;font-size:0;text-align:center;color:var(--red);padding:0}
+.manual-root .check svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.manual-root .check.outline{color:#5b554e}
+
+/* Explicit and accessible tap/click area opens the full project image. */
+.manual-root .preview-open{position:absolute;inset:0;z-index:6;background:transparent;border:0;cursor:zoom-in;width:100%;height:100%;padding:0;display:block}
+.manual-root .preview-open:focus-visible{outline:3px solid var(--red);outline-offset:-6px}
+.manual-root .project-viewport{cursor:zoom-in}
+.manual-root .browser-chrome .chrome-icons{display:none}
+
+/* Reconstructed vector originals: responsive, sharp on high-DPR screens. */
+.manual-root .hero-hand{content:url('/media/manual/vector/hero-note.svg')}
+.manual-root .case-underline{content:url('/media/manual/vector/sirius-underline.svg')}
+.manual-root .collab-underline{content:url('/media/manual/vector/footer-underline.svg')}
+.manual-root .footer-hand{content:url('/media/manual/vector/footer-note.svg')}
+.manual-root .case-mark-left .approved-project-note{content:url('/media/manual/vector/case-left-note.svg')}
+
+/* Mobile preserve the separate V3.1 hierarchy and actual tap areas. */
+@media(max-width:790px){
+ .manual-root .main-nav>a{min-width:0;padding:9px 11px;font-size:13px}
+ .manual-root .main-nav .nav-contact{min-width:112px;margin-left:6px;font-size:13px}
+ .manual-root .main-nav .nav-index{font-size:9px;margin-right:4px}
+}
+@media(max-width:520px){
+ .manual-root .main-nav{height:auto;min-height:50px}
+ .manual-root .main-nav>a{padding:12px 5px;min-height:48px}
+ .manual-root .main-nav .nav-contact{min-width:0;flex:1;margin-left:0}
+ .manual-root .main-nav .nav-index{display:none}
+}
+
+/* Stable full-width signed stroke, not a fragment of a clipped ellipse. */
+.manual-root .red-ring-word:before{background-image:url('/media/manual/vector/sirius-underline.svg');clip-path:none;height:27px;top:calc(100% + 1px);transform:rotate(-2deg)}
+@media(max-width:520px){.manual-root .red-ring-word:before{height:25px;top:100%}}
+
+/* Preserve the complete source frame instead of clipping its edges on wide screens. */
+.manual-root .preview-sirius>img{object-fit:contain;background:#1a1919}
+@media(min-width:791px){.manual-root .layered-aside{right:7%;top:196px;width:235px;height:194px}.manual-root .stack-drawing{width:235px;height:157px;opacity:1}.manual-root .hero-hand{top:91px;right:0;width:171px}}
+@media(min-width:791px) and (max-width:1170px){.manual-root .layered-aside{right:2%;top:195px;width:175px;height:172px}.manual-root .stack-drawing{width:175px;height:131px}.manual-root .hero-hand{top:76px;width:132px}}
+
+/* Wide desktop uses the extra canvas for the actual editorial content instead of
+   making a 1440px document float in empty space. */
+@media(min-width:1600px){
+ .manual-root .intro h1{max-width:1450px;font-size:clamp(73px,4.55vw,90px)}
+ .manual-root .intro-body{min-height:485px}
+ .manual-root .intro .lead{font-size:24px;max-width:860px}
+ .manual-root .intro-marginal .field-note strong{font-size:15px}
+ .manual-root .intro-marginal .field-note>span{font-size:11px}
+ .manual-root .layered-aside{top:242px;right:7%;width:250px;height:197px}
+ .manual-root .stack-drawing{width:250px;height:165px}
+ .manual-root .hero-hand{width:181px;top:95px}
+}
+
+@media(min-width:1600px){
+ .manual-root .intro-content{max-width:none}
+}
