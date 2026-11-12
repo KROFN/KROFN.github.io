@@ -83,7 +83,6 @@ export default function CaseStage({
   setActive: Dispatch<SetStateAction<number>>;
 }) {
   const item = manualCases[active];
-  const sectionRef = useRef<HTMLElement | null>(null);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const expandRef = useRef<HTMLButtonElement | null>(null);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
@@ -140,137 +139,138 @@ export default function CaseStage({
 
   return (
     <>
-      <section
-        aria-labelledby="case-name"
-        className="section scene scene-cases projects"
-        id="cases"
-        ref={sectionRef}
-      >
-        <div className="case-stage-sticky">
-          <div className="section-rail shell">
-            <span className="rail-number">§ 02</span>
-            <span className="rail-heading">К Е Й С / П Р О Е К Т Ы</span>
-            <span className="rail-end">ИЗБРАННОЕ / 03 РАБОТЫ</span>
+      <section aria-labelledby="case-name" className="section scene scene-cases projects" id="cases">
+        <div className="section-rail shell">
+          <span className="rail-number">§ 02</span>
+          <span className="rail-heading">К Е Й С / П Р О Е К Т Ы</span>
+          <span className="rail-end">ИЗБРАННОЕ / 03 РАБОТЫ</span>
+        </div>
+
+        <div className="case-stage-nav shell" onKeyDown={onKeyDown}>
+          <div className="case-progress" aria-live="polite">
+            <strong>0{active + 1}</strong><span>/ 03</span>
+            <i aria-hidden="true"><b style={{ width: `${((active + 1) / manualCases.length) * 100}%` }} /></i>
           </div>
 
-          <div className="case-stage-nav shell" onKeyDown={onKeyDown}>
-            <div className="case-progress" aria-live="polite">
-              <strong>0{active + 1}</strong><span>/ 03</span>
-              <i aria-hidden="true"><b style={{ width: `${((active + 1) / manualCases.length) * 100}%` }} /></i>
-            </div>
+          <div aria-label="Выбрать проект" className="case-pages" role="group">
+            {manualCases.map((currentCase, index) => (
+              <button
+                key={currentCase.id}
+                type="button"
+                className={`page-case${active === index ? " active" : ""}`}
+                aria-current={active === index ? "true" : undefined}
+                onClick={() => select(index)}
+              >
+                <span>0{index + 1}</span> {currentCase.name}
+              </button>
+            ))}
+          </div>
 
-            <div aria-label="Выбрать проект" className="case-pages" role="group">
-              {manualCases.map((currentCase, index) => (
+          <div className="arrow-nav">
+            <button type="button" aria-label="Предыдущий кейс" onClick={() => select(active - 1)}>←</button>
+            <span>0{active + 1} / 03</span>
+            <button type="button" aria-label="Следующий кейс" onClick={() => select(active + 1)}>→</button>
+          </div>
+        </div>
+
+        <div className={`case-editorial-spread case-spread-${item.id} shell`} key={item.id}>
+          <div className="case-serial" aria-hidden="true">
+            <span>CASE</span>
+            <strong>0{active + 1}</strong>
+          </div>
+
+          <header className="case-editorial-title">
+            <span className="eyebrow">0{active + 1} / РАЗРАБОТКА И ДИЗАЙН</span>
+            <h2 id="case-name">{item.name}</h2>
+            <span className="case-proof-stamp">{item.mobileProof}</span>
+          </header>
+
+          <div className="case-editorial-media">
+            <div className="work-frame">
+              <div aria-hidden="true" className="browser-chrome">
+                <span className="chrome-kicker">PROJECT VIEW</span>
+                <span className="chrome-title">{item.chrome}</span>
+              </div>
+
+              <div className="project-viewport" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+                <CaseMedia item={item} />
                 <button
-                  key={currentCase.id}
                   type="button"
-                  className={`page-case${active === index ? " active" : ""}`}
-                  aria-current={active === index ? "true" : undefined}
-                  onClick={() => select(index)}
+                  className="preview-open"
+                  aria-label={"Открыть полный кадр проекта " + item.name}
+                  onClick={() => dialogRef.current?.showModal()}
+                />
+              </div>
+
+              <div className="media-actions">
+                <button
+                  type="button"
+                  className="media-expand"
+                  ref={expandRef}
+                  onClick={() => dialogRef.current?.showModal()}
+                  aria-haspopup="dialog"
                 >
-                  <span>0{index + 1}</span> {currentCase.name}
+                  Рассмотреть изображение целиком <span aria-hidden="true">↗</span>
                 </button>
+              </div>
+            </div>
+          </div>
+
+          <aside className="case-editorial-facts">
+            <div>
+              <span>ТИП</span>
+              <strong>{item.type}</strong>
+            </div>
+            <div>
+              <span>РОЛЬ</span>
+              <strong>{item.role}</strong>
+            </div>
+            <div>
+              <span>СТАТУС</span>
+              <strong>{item.status}</strong>
+            </div>
+          </aside>
+
+          <div className="case-editorial-analysis">
+            <div className="technical-label">
+              <strong>ТЕХНИЧЕСКИЙ РАЗБОР</strong>
+              <span aria-hidden="true" className="hatch" />
+            </div>
+            <div className="technical-lines">
+              {item.lines.map((line, index) => (
+                <div key={line}>
+                  <span
+                    className={"check" + (item.id === "sirius" && index === 2 ? " outline" : "")}
+                    aria-hidden="true"
+                  >
+                    {item.id === "sirius" && index === 2 ? (
+                      <svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" /></svg>
+                    )}
+                  </span>
+                  <span>{line}</span>
+                </div>
               ))}
             </div>
-
-            <div className="arrow-nav">
-              <button type="button" aria-label="Предыдущий кейс" onClick={() => select(active - 1)}>←</button>
-              <span>0{active + 1} / 03</span>
-              <button type="button" aria-label="Следующий кейс" onClick={() => select(active + 1)}>→</button>
-            </div>
           </div>
 
-          <div className="case-state shell" key={item.id}>
-            <div className="case-copy">
-              <div className="case-title-wrap">
-                <span className="eyebrow case-eyebrow">0{active + 1} / РАЗРАБОТКА И ДИЗАЙН</span>
-                <h2 id="case-name">{item.name}</h2>
-              </div>
-
-              <div className="case-mini-facts">
-                <div><span>ТИП</span><strong>{item.type}</strong></div>
-                <div><span>РОЛЬ</span><strong>{item.role}</strong></div>
-                <div><span>СТАТУС</span><strong>{item.status}</strong></div>
-              </div>
-
-              <div className="case-analysis">
-                <div className="technical-label">
-                  <strong>ТЕХНИЧЕСКИЙ<br />РАЗБОР</strong>
-                  <span aria-hidden="true" className="hatch" />
-                </div>
-                <div className="technical-lines">
-                  {item.lines.map((line, index) => (
-                    <div key={line}>
-                      <span
-                        className={"check" + (item.id === "sirius" && index === 2 ? " outline" : "")}
-                        aria-hidden="true"
-                      >
-                        {item.id === "sirius" && index === 2 ? (
-                          <svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg>
-                        ) : (
-                          <svg viewBox="0 0 24 24"><path d="M4 13l5 5L20 6" /></svg>
-                        )}
-                      </span>
-                      <span>{line}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="case-links">
-                {item.source && (
-                  <a className="button button-dark" href={item.source.url} rel="noreferrer" target="_blank">
-                    {item.source.label} <span>↗</span>
-                  </a>
-                )}
-                {item.demo && (
-                  <a className="button button-light" href={item.demo.url} rel="noreferrer" target="_blank">
-                    {item.demo.label} <span>↗</span>
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <div className="case-visual">
-              <div className="work-frame">
-                <div aria-hidden="true" className="browser-chrome">
-                  <span className="chrome-kicker">PROJECT VIEW</span>
-                  <span className="chrome-title">{item.chrome}</span>
-                </div>
-
-                <div className="project-viewport" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-                  <CaseMedia item={item} />
-                  <button
-                    type="button"
-                    className="preview-open"
-                    aria-label={"Открыть полный кадр проекта " + item.name}
-                    onClick={() => dialogRef.current?.showModal()}
-                  />
-                </div>
-
-                <div className="media-actions">
-                  <button
-                    type="button"
-                    className="media-expand"
-                    ref={expandRef}
-                    onClick={() => dialogRef.current?.showModal()}
-                    aria-haspopup="dialog"
-                  >
-                    Рассмотреть изображение целиком <span aria-hidden="true">↗</span>
-                  </button>
-                </div>
-              </div>
-
-            </div>
+          <div className="case-editorial-links">
+            {item.source && (
+              <a className="button button-dark" href={item.source.url} rel="noreferrer" target="_blank">
+                {item.source.label} <span>↗</span>
+              </a>
+            )}
+            {item.demo && (
+              <a className="button button-light" href={item.demo.url} rel="noreferrer" target="_blank">
+                {item.demo.label} <span>↗</span>
+              </a>
+            )}
           </div>
 
-          <div className="mobile-case-editorial shell">
-            <div className="mobile-note">{item.mobileNote}</div>
-          </div>
-
-          <div className="case-scroll-cue" aria-hidden="true">
-            <span>SCROLL / СМЕНА КЕЙСА</span>
-            <i>↓</i>
+          <div className="case-editorial-note" aria-hidden="true">
+            <b>{item.annotationTech.join(" ")}</b>
+            <span>{item.mobileNote}</span>
           </div>
         </div>
       </section>
