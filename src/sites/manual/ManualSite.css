@@ -999,3 +999,173 @@ body[data-route="manual"]{overflow-x:clip}
   .manual-root .case-copy .case-analysis{grid-area:analysis}
   .manual-root .case-copy .case-links{grid-area:links;margin-top:0}
 }
+
+
+/* ==========================================================================
+   V3.3 BALANCE PASS — distinct chapters without turning the site into slides.
+   Free vertical scroll is restored; case switching is explicit, not scroll-forced.
+   ========================================================================== */
+
+/* The page itself is paper again. Dark is used only as a deliberate component
+   color, never as an accidental gutter/background around narrower shells. */
+.manual-root,
+.manual-root .sheet{
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(125deg,rgba(254,251,246,.12),transparent 34%,rgba(109,83,60,.03) 98%),
+    url('/media/manual/assets/paper.webp');
+}
+body[data-route="manual"]{background:var(--paper)!important}
+
+/* Remove the theatrical black separators from V3.2. Chapter changes are now
+   carried by spacing, rails and subtle paper-tone changes. */
+.manual-root .scene-intro{
+  border-bottom:1px solid rgba(37,36,35,.48);
+}
+.manual-root .scene-collab{
+  border-top:1px solid rgba(37,36,35,.48);
+}
+
+/* CASES: normal document flow. The viewer can skip the portfolio instantly.
+   Tabs/arrows/swipe still switch the same three complete project states. */
+.manual-root .scene-cases{
+  height:auto;
+  min-height:0;
+  background:
+    linear-gradient(100deg,rgba(99,79,58,.025),rgba(255,255,255,.06) 48%,rgba(99,79,58,.025)),
+    url('/media/manual/assets/paper.webp'),
+    #e9e3d9;
+  border-bottom:1px solid rgba(37,36,35,.48);
+}
+.manual-root .case-stage-sticky{
+  position:relative;
+  top:auto;
+  height:auto;
+  min-height:0;
+  overflow:visible;
+  padding-bottom:54px;
+  background:transparent;
+  box-shadow:none;
+}
+.manual-root .case-state{
+  min-height:620px;
+  height:auto;
+  padding-top:34px;
+  padding-bottom:30px;
+}
+.manual-root .case-visual .project-viewport{
+  max-height:none;
+  min-height:0;
+}
+.manual-root .case-scroll-cue{display:none!important}
+
+/* Bring a little of the original manual composition back: the project spread
+   sits on the paper, not inside a full-screen app-like stage. */
+.manual-root .case-stage-nav{
+  border-top:1px solid rgba(49,46,42,.22);
+  border-bottom:1px solid rgba(49,46,42,.42);
+}
+.manual-root .case-copy{
+  justify-content:flex-start;
+}
+.manual-root .case-copy .case-links{
+  margin-top:26px;
+}
+.manual-root .case-visual{
+  align-items:flex-start;
+  padding-top:8px;
+}
+.manual-root .case-visual .work-frame{
+  box-shadow:0 10px 26px rgba(45,38,31,.08);
+}
+
+/* COLLAB: restore the same editorial/manual family. Separation comes from
+   composition, not a full-screen black inversion. */
+.manual-root .scene-collab{
+  min-height:auto;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.14),transparent 42%,rgba(126,96,65,.035)),
+    url('/media/manual/assets/paper.webp'),
+    #eee8de;
+  color:var(--ink);
+}
+.manual-root .scene-collab .section-rail{
+  border-color:#8a847d;
+}
+.manual-root .scene-collab .section-rail::before,
+.manual-root .scene-collab .section-rail::after{background:#403e3a}
+.manual-root .scene-collab .rail-number{
+  background:#252525;
+  color:#f3f0e9;
+}
+.manual-root .scene-collab .rail-heading,
+.manual-root .scene-collab .rail-end{color:var(--ink)}
+
+.manual-root .scene-collab .collab-body{
+  min-height:650px;
+  flex:0 0 auto;
+  padding-top:72px;
+  padding-bottom:72px;
+}
+.manual-root .scene-collab .collab-main{
+  border-right:1px solid rgba(37,36,35,.35);
+}
+.manual-root .collab-kicker{
+  color:#9d312b;
+}
+.manual-root .scene-collab .collab-main h2{
+  color:var(--ink);
+}
+.manual-root .scene-collab .collab-main p{
+  color:#56514b;
+}
+.manual-root .scene-collab .offer-lines>div{
+  color:var(--ink);
+  border-bottom-color:rgba(47,45,41,.24);
+}
+.manual-root .scene-collab .check{
+  color:var(--red);
+  border-color:#5d5750;
+}
+
+/* One deliberate dark object instead of a whole dark screen. */
+.manual-root .scene-collab .collab-cta{
+  margin-top:34px;
+  padding:22px;
+  background:#292826;
+  border:1px solid #292826;
+}
+.manual-root .scene-collab .collab-cta-label{
+  color:#d66a60;
+  margin-bottom:11px;
+}
+.manual-root .scene-collab .final-button{
+  background:#f1ede5;
+  color:#242321;
+  border-color:#f1ede5;
+}
+.manual-root .scene-collab .site-footer{
+  color:var(--ink);
+  border-color:#777068;
+}
+.manual-root .scene-collab .footer-right a:hover{color:var(--red)}
+
+@media(max-width:900px){
+  .manual-root .case-stage-sticky{padding-bottom:34px}
+  .manual-root .case-state{min-height:0}
+  .manual-root .scene-collab .collab-body{
+    min-height:0;
+    padding-top:42px;
+    padding-bottom:42px;
+  }
+  .manual-root .scene-collab .collab-main{
+    border-bottom:1px solid rgba(37,36,35,.28);
+  }
+}
+
+@media(max-width:520px){
+  .manual-root .scene-collab .collab-cta{padding:14px}
+}

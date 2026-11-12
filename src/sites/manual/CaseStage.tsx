@@ -105,58 +105,10 @@ export default function CaseStage({
     };
   }, [item.id]);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const desktop = window.matchMedia("(min-width: 901px)");
-    let raf = 0;
-
-    const updateFromScroll = () => {
-      raf = 0;
-      if (!desktop.matches) return;
-
-      const rect = section.getBoundingClientRect();
-      const travel = Math.max(1, rect.height - window.innerHeight);
-      const progress = Math.min(1, Math.max(0, -rect.top / travel));
-      const next = Math.round(progress * (manualCases.length - 1));
-
-      if (rect.top <= 1 && rect.bottom >= window.innerHeight - 1) {
-        setActive((current) => (current === next ? current : next));
-      }
-    };
-
-    const onScroll = () => {
-      if (!raf) raf = window.requestAnimationFrame(updateFromScroll);
-    };
-
-    updateFromScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (raf) window.cancelAnimationFrame(raf);
-    };
-  }, [setActive]);
-
   const select = useCallback(
-    (requested: number, syncScroll = true) => {
+    (requested: number) => {
       const index = (requested + manualCases.length) % manualCases.length;
       setActive(index);
-
-      if (!syncScroll || !window.matchMedia("(min-width: 901px)").matches) return;
-
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const maxTravel = Math.max(0, section.offsetHeight - window.innerHeight);
-      const fraction = manualCases.length === 1 ? 0 : index / (manualCases.length - 1);
-      window.scrollTo({
-        top: section.offsetTop + maxTravel * fraction,
-        behavior: "smooth",
-      });
     },
     [setActive],
   );
@@ -182,7 +134,7 @@ export default function CaseStage({
     const dx = touch.clientX - start.x;
     const dy = touch.clientY - start.y;
     if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy) * 1.6) {
-      select(active + (dx < 0 ? 1 : -1), false);
+      select(active + (dx < 0 ? 1 : -1));
     }
   };
 
@@ -222,9 +174,9 @@ export default function CaseStage({
             </div>
 
             <div className="arrow-nav">
-              <button type="button" aria-label="Предыдущий кейс" onClick={() => select(active - 1, false)}>←</button>
+              <button type="button" aria-label="Предыдущий кейс" onClick={() => select(active - 1)}>←</button>
               <span>0{active + 1} / 03</span>
-              <button type="button" aria-label="Следующий кейс" onClick={() => select(active + 1, false)}>→</button>
+              <button type="button" aria-label="Следующий кейс" onClick={() => select(active + 1)}>→</button>
             </div>
           </div>
 
