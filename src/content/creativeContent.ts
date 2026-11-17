@@ -2,10 +2,10 @@ import type { Locale, PortfolioCopy, ProjectItem } from "../types/portfolio";
 
 export const projects: ProjectItem[] = [
   {
-    id: "p3",
-    image: "/img/fincross.jpg",
-    demoUrl: "https://kraskovsky-crossword.vercel.app/",
-    repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
+    id: "p2",
+    image: "/img/imgifted-fest.jpg",
+    demoUrl: "https://imgifted-fest.vercel.app/",
+    repoUrl: "https://github.com/KROFN/imgifted-fest",
   },
   {
     id: "p0",
@@ -14,10 +14,10 @@ export const projects: ProjectItem[] = [
     repoUrl: "https://github.com/KROFN/lak-and-point",
   },
   {
-    id: "p2",
-    image: "/img/imgifted-fest.jpg",
-    demoUrl: "https://imgifted-fest.vercel.app/",
-    repoUrl: "https://github.com/KROFN/imgifted-fest",
+    id: "p3",
+    image: "/img/fincross.jpg",
+    demoUrl: "https://kraskovsky-crossword.vercel.app/",
+    repoUrl: "https://github.com/KROFN/kraskovsky-crossword",
   },
   {
     id: "p1",
@@ -79,12 +79,12 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Identity-driven web experience",
       },
       p2: {
-        name: ["IMGIFTED FEST"],
-        category: "Платформа мероприятия",
+        name: ["Я ТАЛАНТЛИВ"],
+        category: "Фестивальный сайт / Дизайн-концепт",
         summary:
-          "Сайт фестиваля одарённых детей с визуальным расписанием конкурсных дней, категориями выступлений, возрастными группами и адаптивной структурой для просмотра на компьютере и мобильных устройствах.",
-        tech: "HTML · CSS · Responsive",
-        note: "Schedule layout and editorial poster-style presentation",
+          "Авторский редизайн сайта фестиваля «Я Талантлив»: разрезная типографическая «Я», семь фактур творчества, редакционная композиция и интерактивные демонстрационные сценарии.",
+        tech: "React · TypeScript · Vite · CSS Motion",
+        note: "Independent festival redesign · not official",
       },
       p3: {
         name: ["FINCROSS"],
@@ -278,12 +278,12 @@ export const portfolioContent: Record<Locale, PortfolioCopy> = {
         note: "Identity-driven web experience",
       },
       p2: {
-        name: ["IMGIFTED FEST"],
-        category: "Event platform",
+        name: ["YA TALANTLIV"],
+        category: "Festival website / Concept",
         summary:
-          "A festival website for gifted children featuring a visual schedule for competition days, performance categories, age groups, and an adaptive structure for desktop and mobile viewing.",
-        tech: "HTML · CSS · Responsive",
-        note: "Schedule layout and editorial poster-style presentation",
+          "Independent redesign concept for a creative youth festival: sliced typographic identity, textured editorial art direction, program timeline and responsive React UI.",
+        tech: "React · TypeScript · Vite · CSS Motion",
+        note: "Independent festival redesign · not official",
       },
       p3: {
         name: ["FINCROSS"],
